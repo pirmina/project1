@@ -1,0 +1,235 @@
+// 아래와 같이 less 에서만 쓰는 클래스를 만들려면 클래스 뒤에 () 붙여 준다. 그러면
+// css 에서 랜더링 되지 않음.
+// 아래 구문은 자주 반복 사용되는 구문을 미리 정의 한 것으로 아래 클래스를 속성에다가
+// 넣으면 해당 속성이 들어감.  예) .aaa{.less_display_box}
+
+// 고정 공통 속성
+.less_dbox(){display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
+.less_flex(){-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;}
+.less_appearance(){-moz-appearance: none;-ms-appearance: none;-webkit-appearance: none;appearance: none}
+// Box-sizing
+.box-sizing(@box-model) {
+	-webkit-box-sizing: @box-model; // Safari <= 5
+	   -moz-box-sizing: @box-model; // Firefox <= 19
+			box-sizing: @box-model;
+}
+// Box (Drop) shadows
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+	-webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+			box-shadow: @shadow;
+}
+// Transitions
+.transition(@transition) {
+	-webkit-transition: @transition;
+			transition: @transition;
+}
+.transition_jtbc(@transition) {
+	-webkit-transition: @transition cubic-bezier(0.39, 0.575, 0.565, 1);
+			transition: @transition cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.transition-property(@transition-property) {
+	-webkit-transition-property: @transition-property;
+			transition-property: @transition-property;
+}
+.transition-delay(@transition-delay) {
+	-webkit-transition-delay: @transition-delay;
+			transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+	-webkit-transition-duration: @transition-duration;
+			transition-duration: @transition-duration;
+}
+.transition-timing-function(@timing-function) {
+	-webkit-transition-timing-function: @timing-function;
+			transition-timing-function: @timing-function;
+}
+.transition-transform(@transition) {
+	-webkit-transition: -webkit-transform @transition;
+	   -moz-transition: -moz-transform @transition;
+		 -o-transition: -o-transform @transition;
+			transition: transform @transition;
+}
+// Transformations
+.rotate(@degrees) {
+	-webkit-transform: rotate(@degrees);
+		-ms-transform: rotate(@degrees); // IE9 only
+			transform: rotate(@degrees);
+}
+.scale(@ratio; @ratio-y...) {
+	-webkit-transform: scale(@ratio, @ratio-y);
+		-ms-transform: scale(@ratio, @ratio-y); // IE9 only
+			transform: scale(@ratio, @ratio-y);
+}
+.translate(@x; @y) {
+	-webkit-transform: translate(@x, @y);
+		-ms-transform: translate(@x, @y); // IE9 only
+			transform: translate(@x, @y);
+}
+.skew(@x; @y) {
+	-webkit-transform: skew(@x, @y);
+		-ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+			transform: skew(@x, @y);
+}
+.translate3d(@x; @y; @z) {
+	-webkit-transform: translate3d(@x, @y, @z);
+			transform: translate3d(@x, @y, @z);
+}
+
+.rotateX(@degrees) {
+	-webkit-transform: rotateX(@degrees);
+		-ms-transform: rotateX(@degrees); // IE9 only
+			transform: rotateX(@degrees);
+}
+.rotateY(@degrees) {
+	-webkit-transform: rotateY(@degrees);
+		-ms-transform: rotateY(@degrees); // IE9 only
+			transform: rotateY(@degrees);
+}
+.perspective(@perspective) {
+	-webkit-perspective: @perspective;
+	   -moz-perspective: @perspective;
+			perspective: @perspective;
+}
+.perspective-origin(@perspective) {
+	-webkit-perspective-origin: @perspective;
+	   -moz-perspective-origin: @perspective;
+			perspective-origin: @perspective;
+}
+.transform-origin(@origin) {
+	-webkit-transform-origin: @origin;
+	   -moz-transform-origin: @origin;
+		-ms-transform-origin: @origin; // IE9 only
+			transform-origin: @origin;
+}
+//Animations
+.keyframes(@name; @arguments) {
+	   @-moz-keyframes @name { @arguments(); }
+	@-webkit-keyframes @name { @arguments(); }
+			@keyframes @name { @arguments(); }
+}
+.animation(@animation) {
+	-webkit-animation: @animation;
+			animation: @animation;
+}
+.animation-name(@name) {
+	-webkit-animation-name: @name;
+			animation-name: @name;
+}
+.animation-duration(@duration) {
+	-webkit-animation-duration: @duration;
+			animation-duration: @duration;
+}
+.animation-timing-function(@timing-function) {
+	-webkit-animation-timing-function: @timing-function;
+			animation-timing-function: @timing-function;
+}
+.animation-delay(@delay) {
+	-webkit-animation-delay: @delay;
+			animation-delay: @delay;
+}
+.animation-iteration-count(@iteration-count) {
+	-webkit-animation-iteration-count: @iteration-count;
+			animation-iteration-count: @iteration-count;
+}
+.animation-direction(@direction) {
+	-webkit-animation-direction: @direction;
+			animation-direction: @direction;
+}
+// Opacity
+.opacity(@opacity) {
+	opacity: @opacity;
+	// IE8 filter
+	@opacity-ie: (@opacity * 100);
+	filter: ~"alpha(opacity=@{opacity-ie})";
+}
+// Placeholder text
+.placeholder(@color: @input-color-placeholder) {
+	&::-moz-placeholder           { color: @color; } // Firefox
+	&:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
+	&::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}
+// clearfix
+.clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+// sizing helpers
+.size(@width; @height) {
+	width: @width;
+	height: @height;
+}
+.square(@size) {
+	.size(@size; @size);
+}
+// Truncating text
+.text-ellipsis(){
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.text-ellipsis-2line(){
+	//ie, firefox는  display:inline-block;으로 나타납니다. 작성시 최대 높이(max-height)를 입력해주세요. (개발에서의 말줄임필요)
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:normal;
+	word-wrap:break-word;
+	display:inline-block;//순서 주의 ie, firefox
+	*display:inline;
+	*zoom:1;
+	display:-webkit-box;//순서 주의 chrome, safari, opera
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+}
+.text-no-ellipsis(){
+	overflow:hidden;
+	white-space:initial;
+	text-overflow:ellipsis;
+}
+//font-family
+.font-family-verdana(){
+	font-family:Verdana,'Apple SD Gothic Neo', arial, 'Helvetica', Tahoma, Geneva, sans-serif;
+}
+// Retina images
+/*.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+	background-image: url("@{file-1x}");
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (     -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2),
+	only screen and (                min-resolution: 192dpi),
+	only screen and (                min-resolution: 2dppx) {
+		background-image: url("@{file-2x}");
+		background-size: @width-1x @height-1x;
+	}
+}*/
+// spritesmith를 이용한 Retina images
+.sprite-retina-width(@sprite) {
+	width: (extract(@sprite, 5)/2);
+}
+.sprite-retina-height(@sprite) {
+	height: (extract(@sprite, 6)/2);
+}
+.sprite-retina-position(@sprite) {
+	  @sprite-retina-offset-x: (extract(@sprite, 3)/2);
+	  @sprite-retina-offset-y: (extract(@sprite, 4)/2);
+	  background-position: @sprite-retina-offset-x @sprite-retina-offset-y;
+}
+.sprite-retina-background-size(@sprite){
+	@sprite-retina-size-width:(@spritesheet-width/2);
+	@sprite-retina-size-height:(@spritesheet-height/2);
+	background-size: @sprite-retina-size-width @sprite-retina-size-height;
+}
+.sprite-retina(@sprite) {
+	.sprite-image(@sprite);
+	.sprite-retina-position(@sprite);
+	.sprite-retina-width(@sprite);
+	.sprite-retina-height(@sprite);
+	.sprite-retina-background-size(@sprite);
+}

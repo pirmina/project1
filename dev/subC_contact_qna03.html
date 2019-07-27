@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="description" content="JTBC worldwide hompages">
+<title>JTBC worldwide</title>
+<link rel="apple-touch-icon" sizes="57x57" href="//jtbc.joins.com/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//jtbc.joins.com//favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//jtbc.joins.com//favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//jtbc.joins.com//favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//jtbc.joins.com//favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//jtbc.joins.com//favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//jtbc.joins.com//favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//jtbc.joins.com//favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//jtbc.joins.com//favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="//jtbc.joins.com//favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//jtbc.joins.com//favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//jtbc.joins.com//favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//jtbc.joins.com//favicon/favicon-16x16.png">
+<link rel="stylesheet" href="/css/styles.css" type="text/css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/modernizr-custom.js"></script>
+<script type="text/javascript" src="/js/ux_common.js"></script>
+<script type="text/javascript" src="/js/include-html.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<ul id="u_skip">
+		<li><a href="#gnb">main menu</a></li>
+		<li><a href="#contents">contents</a></li>
+	</ul>
+	<!-- [D]서브페이지에는 #wrap div에 클래스 sub를 붙여주세요. -->
+	<div id="wrap" class="sub">
+		<!-- header -->
+		<div id="header"></div>
+		<div id="gnb" role="navigation"></div>
+		<!-- //header -->
+		<!-- contents -->
+		<div id="contents" role="main">
+			<div class="heading tab_heading">
+				<h3 class="tit_h3"><span class="sp_ico tit_contact">Contact</span></h3>
+				<ol class="navigation">
+					<li class="home"><span class="sp_ico ico_home">Home</span></li>
+					<li>Contact</li>
+					<li class="current">Q&amp;A</li>
+				</ol>
+			</div><!-- .heading tab_heading -->
+			<!-- tab component -->
+			<div class="tab_area">
+				<ul class="tab tab4">
+					<!-- [D] 탭 선택시 li에 addClass "on" 붙여주세요 -->
+					<li><a href="#"><h4>Business <em class="br">Territory</em></h4></a></li>
+					<li><a href="#"><h4>Request</h4></a></li>
+					<li class="on"><a href="#"><h4>Q&amp;A</h4></a></li>
+					<li><a href="#"><h4>Content <em class="br">Market</em></h4></a></li>
+				</ul>
+			</div><!-- .tab_area -->
+			<div class="cont_wrap write_wrap">
+				<div class="tbl_form">
+					<!--[D] 개발시 label, id 값 일치시켜주세요. -->
+					<dl>
+						<dt class="tit m_col2 first_line"><label for="nam_bd">Name</label></dt><!-- 180px -->
+						<dd class="m_col2 first_line">
+							<!--[D] login시 name 자동출력 -->
+							<input type="text" name="" value="Kyle" id="nam_bd">
+						</dd>
+						<dt class="tit m_col2"><label for="tit_bd">Title</label></dt>
+						<dd class="m_col2">
+							<input type="text" name="" value="" id="tit_bd">
+							<div class="input_chk_area">
+								<input type="checkbox" name="cont_type" value="" class="inp_chk_basic" id="tp_secret"><label for="tp_secret">Secret article</label>
+								<input type="checkbox" name="cont_type" value="" class="inp_chk_basic" id="tp_notice"><label for="tp_notice">Notice</label>
+							</div><!-- .input_chk_area -->
+						</dd>
+						<dt class="tit m_col2">File attach</dt>
+						<dd class="m_col2">
+							<a href="#" class="btn_attach"><em class="sp_ico ico_pic">photo upload</em></a>
+							<a href="#" class="btn_attach"><em class="sp_ico ico_file">file upload</em></a>
+						</dd>
+						<dt class="tit">Content</dt>
+						<dd class="h_content">
+							<div class="editor_wrap" tabindex="0">
+							<!-- [D]에디터영역 (테이블 높이갚 css에서 잡아줘야합니다.) -->
+							</div><!-- .editor_wrap -->
+						</dd>
+						<dt class="tit">Image Attached</dt>
+						<dd class="h_attached_img">
+							<div class="attached_box img_box">
+								<!-- [D]첨부이미지 -->
+								<span class="img">
+									<img src="/images/@tmp_thumb_scripted.jpg" alt="attached image">
+									<!-- [D] 대표이미지 표시 -->
+									<em class="represent">Rep</em>
+									<!-- //[D] 대표이미지 표시 -->
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="img">
+									<img src="/images/@tmp_poster1.jpg" alt="attached image">
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<!-- //[D]첨부이미지 -->
+							</div><!-- .attached_box img_box -->
+						</dd>
+						<dt class="tit">File Attached</dt>
+						<dd class="h_attached_file">
+							<div class="attached_box file_box">
+								<!-- [D]첨부파일 -->
+								<span class="file">
+									hahahahah.pdf (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="file">
+									kakao_imgel3059e82nblsjdlfjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="file">
+									kakao_imgel3059e82nblsjdlfjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="file">
+									kakao_imgel3059e82nblsjdlfdsdsdjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="file">
+									kakao_imgel3059e82nblsjdsdssdsdlfjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+
+								<span class="file">
+									kakao_imgel3059e82nblsjdlfjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="file">
+									kakao_imgel3059e82nblsjdlfdsdsdjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="file">
+									kakao_imgel3059e82nblsjdsdssdsdlfjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+
+								<span class="file">
+									kakao_imgel3059e82nblsjdlfjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="file">
+									kakao_imgel3059e82nblsjdlfdsdsdjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<span class="file">
+									kakao_imgel3059e82nblsjdsdssdsdlfjsl.txt (142.0KB)
+									<a href="#"><em class="sp_ico ico_del">delete</em></a>
+								</span>
+								<!-- //[D]첨부파일 -->
+							</div><!-- .attached_box file_box -->
+						</dd>
+						<dt class="tit"><label for="pw_bd">Password</label></dt>
+						<dd><input type="password" name="" value="" id="pw_bd"></dd>
+						<dt class="tit warning"><label for="rpw_bd">Re-enter Password</label></dt>
+						<dd class="warning">
+							<div class="input_pw_area">
+								<!-- [D] 경고문구생성 시 dt, dd 에 addClass warning 붙여주세요. -->
+								<input type="password" name="" value="" id="rpw_bd" class="warning">
+								<p class="txt_warn">Password do not match</p>
+							</div><!-- .input_pw_area -->
+						</dd>
+					</dl>
+				</div><!-- .tbl_form -->
+				<div class="form_btn_area">
+					<p class="notice">Any postings that violate the rights of others, such as copyrights or libel, <br> can be imposed by the relevant law and can be deleted according to the principle of gesipin operating principles.</p>
+					<a href="#" class="btn btn_md_type1">CANCEL</a>
+					<a href="#" class="btn btn_md_type2">OK</a>
+				</div><!-- .form_btn_area -->
+			</div><!-- .cont_wrap write_wrap -->
+		</div>
+		<!-- //contents -->
+		<!-- footer -->
+		<div id="footer"></div>
+		<!-- //footer -->
+		<div class="dimmed"></div>
+	</div>
+</body>
+</html>

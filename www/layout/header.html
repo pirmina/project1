@@ -1,0 +1,39 @@
+<div class="head">
+    <h1 class="h1"><a href="#"><span class="sp_ico logo_jtbc">JTBC worldwide</span></a></h1>
+    <!-- [D] 로그인시에 .util_area 에 addClass login 붙여주세요. -->
+    <ul class="util_area">
+        <li>
+            <a href="#" class="util_btn static_logout"><span class="sp_ico util_login">Login</span></a>
+            <!-- ㅣogin 시 -->
+            <a href="#" class="util_btn static_login"><span class="sp_ico util_logout">Logout</span></a>
+            <!-- //ㅣogin 시 -->
+            <div class="layer_pop pop_login">
+                <span class="bg_top"></span>
+                <p class="pop_tit"><span class="sp_ico txt_jtbcww_login pc"></span><span class="mo">JTBC worldwide Login</span></p>
+                <!-- login -->
+                <!--[D] 개발시 label, id 값 일치시켜주세요. -->
+                <dl class="input_area">
+                    <dt class="blind"><label for="login_em">E-mail</label></dt>
+                    <dd class="login_email"><input type="email" name="" value="" id="login_em" placeholder="E-mail"></dd>
+                    <dt class="blind"><label for="login_pw">Password</label></dt>
+                    <dd class="login_pw"><input type="password" name="" value="" id="login_pw" placeholder="Password"></dd>
+                </dl>
+                <p class="chk_keep">
+                    <input type="checkbox" name="" value="" id="login_keep" class="inp_check_login">
+                    <label for="login_keep">Keep me logged</label>
+                </p>
+                <button type="button" name="button" class="btn btn_md_type2"><span>LOGIN</span></button>
+                <a href="#" class="find_pw">Forgot your password?</a>
+                <a href="#" class="btn_close"><em class="sp_ico ico_close">close</em></a>
+                <!-- //login -->
+            </div><!-- .layer_pop pop_login -->
+        </li>
+        <li>
+            <a href="#" class="util_btn static_logout"><span class="sp_ico util_register">Register</span></a>
+            <!-- ㅣogin 시 -->
+            <!-- myinfo page에서는 util_btn에 addClass on 붙여주세요. -->
+            <a href="#" class="util_btn static_login on"><span class="sp_ico util_myinfo_off">My info</span></a>
+            <!-- //ㅣogin 시 -->
+        </li>
+    </ul>
+</div><!-- .head -->

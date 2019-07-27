@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="description" content="JTBC worldwide hompages">
+<title>JTBC worldwide</title>
+<link rel="apple-touch-icon" sizes="57x57" href="//jtbc.joins.com/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//jtbc.joins.com//favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//jtbc.joins.com//favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//jtbc.joins.com//favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//jtbc.joins.com//favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//jtbc.joins.com//favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//jtbc.joins.com//favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//jtbc.joins.com//favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//jtbc.joins.com//favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="//jtbc.joins.com//favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//jtbc.joins.com//favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//jtbc.joins.com//favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//jtbc.joins.com//favicon/favicon-16x16.png">
+<link rel="stylesheet" href="/css/styles.css" type="text/css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/modernizr-custom.js"></script>
+<script type="text/javascript" src="/js/ux_common.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/js/respond.min.js"></script>
+<![endif]-->
+<style>
+/*테스트 스타일입니다.*/
+.cont_wrap.scripted_wrap{display:none;}
+</style>
+</head>
+<body>
+	<ul id="u_skip">
+		<li><a href="#gnb">main menu</a></li>
+		<li><a href="#contents">contents</a></li>
+	</ul>
+	<!-- [D]서브페이지에는 #wrap div에 클래스 sub를 붙여주세요. -->
+	<div id="wrap" class="sub">
+		<!-- header -->
+		<div id="header">
+			<div class="head">
+			    <h1 class="h1"><a href="#"><span class="sp_ico logo_jtbc">JTBC worldwide</span></a></h1>
+			    <!-- [D] 로그인시에 .util_area 에 addClass login 붙여주세요. -->
+			    <ul class="util_area">
+			        <li>
+			            <a href="#" class="util_btn static_logout"><span class="sp_ico util_login">Login</span></a>
+			            <!-- ㅣogin 시 -->
+			            <a href="#" class="util_btn static_login"><span class="sp_ico util_logout">Logout</span></a>
+			            <!-- //ㅣogin 시 -->
+			            <div class="layer_pop pop_login">
+			                <p class="pop_tit"><span class="sp_ico txt_jtbcww_login">JTBC worldwide Login</span></p>
+			                <!-- login -->
+			                <!--[D] 개발시 label, id 값 일치시켜주세요. -->
+			                <dl class="input_area">
+			                    <dt class="blind"><label for="login_em">E-mail</label></dt>
+			                    <dd class="login_email"><input type="email" name="" value="" id="login_em" placeholder="E-mail"></dd>
+			                    <dt class="blind"><label for="login_pw">Password</label></dt>
+			                    <dd class="login_pw"><input type="password" name="" value="" id="login_pw" placeholder="Password"></dd>
+			                </dl>
+			                <p class="chk_keep">
+			                    <input type="checkbox" name="" value="" id="login_keep" class="inp_check_login">
+			                    <label for="login_keep">Keep me logged in</label>
+			                </p>
+			                <button type="button" name="button" class="btn btn_md_type2"><span>Log in</span></button>
+			                <a href="#" class="find_pw">Forgot your password?</a>
+			                <!-- //login -->
+			            </div><!-- .layer_pop pop_login -->
+			        </li>
+			        <li>
+			            <a href="#" class="util_btn static_logout"><span class="sp_ico util_register">Register</span></a>
+			            <!-- ㅣogin 시 -->
+			            <!-- myinfo page에서는 util_btn에 addClass on 붙여주세요. -->
+			            <a href="#" class="util_btn static_login on"><span class="sp_ico util_myinfo_off">My info</span></a>
+			            <!-- //ㅣogin 시 -->
+			        </li>
+			    </ul>
+			</div><!-- .head -->
+		</div>
+		<div id="gnb" role="navigation">
+			<h2 class="blind">Global navigation</h2>
+			<a href="#" class="btn_gnb_open"><span class="sp_ico">Global navigation open</span></a>
+			<!-- [D] btn_gnb_open클릭시 .gnb_wrap에 addClass open 붙여주세요. -->
+			<div class="gnb_wrap">
+			    <!-- [D] 로그인시 gnb_top_util에 addClass login해주세요.  -->
+				<div class="gnb_wrap_inner">
+				    <div class="gnb_top_util login">
+				        <p class="txt_gnb_welcome">Welcome <span class="basic">to<em class="nam_basic">JTBC Worldwide</em></span><em class="nam_custom">Gildong Hong</em></p>
+				        <a href="#" class="util_btn_myinfo">My Info</a>
+				    </div>
+				    <ul>
+				        <!-- [D] 활성화시 li에 addClass "on" 을 붙여주세요 -->
+				        <li class="menu1"><a href="#"><span class="sp_ico pc"></span><span class="mo">SCRIPTED</span></a></li>
+				        <li class="menu2"><a href="#"><span class="sp_ico pc"></span><span class="mo">NON-SCRIPTED</span></a></li>
+				        <li class="menu3"><a href="#"><span class="sp_ico pc"></span><span class="mo">FORMAT</span></a></li>
+				        <li class="menu4"><a href="#"><span class="sp_ico pc"></span><span class="mo">SPORTS/AWARDS</span></a></li>
+				        <li class="menu5"><a href="#"><span class="sp_ico pc"></span><span class="mo">DIGITAL ORIGINAL</span></a></li>
+				        <li class="menu6"><a href="#"><span class="sp_ico">CONTACT</span></a></li>
+				        <li class="menu7"><a href="#"><span class="sp_ico">ABOUT JTBC</span></a></li>
+				    </ul>
+				</div>
+			    <a href="#" class="btn_gnb_close"><span class="sp_ico ico_gnb_close">Global navigation close</span></a>
+			</div><!-- .gnb_wrap -->
+		</div>
+		<!-- //header -->
+		<!-- contents -->
+		<div id="contents" role="main">
+			<div class="heading">
+				<h3 class="tit_h3"><span class="sp_ico tit_scripted">Scripted</span></h3>
+				<ol class="navigation">
+					<li class="home"><span class="sp_ico ico_home">Home</span></li>
+					<li class="current">Scripted</li>
+				</ol>
+			</div><!-- .heading -->
+			<!-- sorting component -->
+			<ul class="sorting_area">
+				<!--[D] 개발시 label, id 값 일치시켜주세요. -->
+				<li>
+					<input type="radio" name="sorting" value="" id="sorting_current" class="inp_radio" checked>
+					<label for="sorting_current">current airing</label>
+				</li>
+				<li>
+					<input type="radio" name="sorting" value="" id="sorting_ended" class="inp_radio">
+					<label for="sorting_ended">ended</label>
+				</li>
+				<li>
+					<input type="radio" name="sorting" value="" id="sorting_screener" class="inp_radio">
+					<label for="sorting_screener">screener</label>
+				</li>
+			</ul>
+			<!-- //sorting component -->
+			<div class="cont_wrap scripted_wrap">
+				<div class="box_program">
+					<!-- [D] .tit_pr 값과 pr_thumb 이미지 alt값이 동일하게 노출되도록 개발해주세요. -->
+					<div class="pr_thumb">
+						<span class="inner"><img src="/images/@tmp_thumb_scripted.jpg" alt="Power girl DoBongSoon(2017)"></span>
+					</div><!-- .pr_thumb -->
+					<div class="pr_detail_area">
+						<h4><a href="#" class="tit_pr">Power girl DoBongSoon<em class="pr_years">(2017)</em></a></h4>
+						<ul class="pr_detail">
+							<li><span class="tit">Director : </span><span class="txt_detail">SukYoon Kim</span></li>
+							<li><span class="tit">Writer : </span><span class="txt_detail">NamKyu Lee, HyoShin Kim, YeahLim Lee</span></li>
+							<li><span class="tit">Stars : </span><span class="txt_detail">SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee</span></li>
+						</ul>
+						<div class="pr_cnt">
+							<!-- [D] 컨텐츠 존재여부에 따라 클래스 active 추가/삭제 됩니다. -->
+							<span class="ico_cnt_type active">Poster</span>
+							<span class="ico_cnt_type active">Still Cut</span>
+							<span class="ico_cnt_type active">Script</span>
+							<span class="ico_cnt_type active">Screener</span>
+							<span class="ico_cnt_type">Quesheet</span>
+						</div><!-- .pr_cnt -->
+					</div><!-- .pr_detail_area -->
+				</div><!-- .box_program -->
+				<div class="box_program">
+					<!-- [D] .tit_pr 값과 pr_thumb 이미지 alt값이 동일하게 노출되도록 개발해주세요. -->
+					<div class="pr_thumb">
+						<span class="inner"><img src="/images/@tmp_thumb_scripted.jpg" alt="Pantastic(2017)"></span>
+					</div><!-- .pr_thumb -->
+					<div class="pr_detail_area">
+						<h4><a href="#" class="tit_pr">Pantastic<em class="pr_years">(2017)</em></a></h4>
+						<ul class="pr_detail">
+							<li><span class="tit">Director : </span><span class="txt_detail">SukYoon Kim</span></li>
+							<li><span class="tit">Writer : </span><span class="txt_detail">NamKyu Lee, HyoShin Kim, YeahLim Lee</span></li>
+							<li><span class="tit">Stars : </span><span class="txt_detail">SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee</span></li>
+						</ul>
+						<div class="pr_cnt">
+							<!-- [D] 컨텐츠 존재여부에 따라 클래스 active 추가/삭제 됩니다. -->
+							<span class="ico_cnt_type active">Poster</span>
+							<span class="ico_cnt_type">Still Cut</span>
+							<span class="ico_cnt_type active">Script</span>
+							<span class="ico_cnt_type">Screener</span>
+							<span class="ico_cnt_type">Quesheet</span>
+						</div><!-- .pr_cnt -->
+					</div><!-- .pr_detail_area -->
+				</div><!-- .box_program -->
+				<div class="box_program">
+					<!-- [D] .tit_pr 값과 pr_thumb 이미지 alt값이 동일하게 노출되도록 개발해주세요. -->
+					<div class="pr_thumb">
+						<span class="inner"><img src="/images/@tmp_thumb_scripted.jpg" alt="False testimony of Solomon(2017)"></span>
+					</div><!-- .pr_thumb -->
+					<div class="pr_detail_area">
+						<h4><a href="#" class="tit_pr">False testimony of Solomon<em class="pr_years">(2017)</em></a></h4>
+						<ul class="pr_detail">
+							<li><span class="tit">Director : </span><span class="txt_detail">SukYoon Kim</span></li>
+							<li><span class="tit">Writer : </span><span class="txt_detail">NamKyu Lee, HyoShin Kim, YeahLim Lee</span></li>
+							<li><span class="tit">Stars : </span><span class="txt_detail">SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee</span></li>
+						</ul>
+						<div class="pr_cnt">
+							<!-- [D] 컨텐츠 존재여부에 따라 클래스 active 추가/삭제 됩니다. -->
+							<span class="ico_cnt_type active">Poster</span>
+							<span class="ico_cnt_type">Still Cut</span>
+							<span class="ico_cnt_type">Script</span>
+							<span class="ico_cnt_type">Screener</span>
+							<span class="ico_cnt_type active">Quesheet</span>
+						</div><!-- .pr_cnt -->
+					</div><!-- .pr_detail_area -->
+				</div><!-- .box_program -->
+				<div class="box_program">
+					<!-- [D] .tit_pr 값과 pr_thumb 이미지 alt값이 동일하게 노출되도록 개발해주세요. -->
+					<div class="pr_thumb">
+						<span class="inner"><img src="/images/@tmp_thumb_scripted.jpg" alt="Power girl DoBongSoon(2017)"></span>
+					</div><!-- .pr_thumb -->
+					<div class="pr_detail_area">
+						<h4><a href="#" class="tit_pr">Power girl DoBongSoon<em class="pr_years">(2017)</em></a></h4>
+						<ul class="pr_detail">
+							<li><span class="tit">Director : </span><span class="txt_detail">SukYoon Kim</span></li>
+							<li><span class="tit">Writer : </span><span class="txt_detail">NamKyu Lee, HyoShin Kim, YeahLim Lee</span></li>
+							<li><span class="tit">Stars : </span><span class="txt_detail">SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee</span></li>
+						</ul>
+						<div class="pr_cnt">
+							<!-- [D] 컨텐츠 존재여부에 따라 클래스 active 추가/삭제 됩니다. -->
+							<span class="ico_cnt_type active">Poster</span>
+							<span class="ico_cnt_type active">Still Cut</span>
+							<span class="ico_cnt_type active">Script</span>
+							<span class="ico_cnt_type active">Screener</span>
+							<span class="ico_cnt_type">Quesheet</span>
+						</div><!-- .pr_cnt -->
+					</div><!-- .pr_detail_area -->
+				</div><!-- .box_program -->
+				<div class="box_program">
+					<!-- [D] .tit_pr 값과 pr_thumb 이미지 alt값이 동일하게 노출되도록 개발해주세요. -->
+					<div class="pr_thumb">
+						<span class="inner"><img src="/images/@tmp_thumb_scripted.jpg" alt="Power girl DoBongSoon(2017)"></span>
+					</div><!-- .pr_thumb -->
+					<div class="pr_detail_area">
+						<h4><a href="#" class="tit_pr">Power girl DoBongSoon<em class="pr_years">(2017)</em></a></h4>
+						<ul class="pr_detail">
+							<li><span class="tit">Director : </span><span class="txt_detail">SukYoon Kim</span></li>
+							<li><span class="tit">Writer : </span><span class="txt_detail">NamKyu Lee, HyoShin Kim, YeahLim Lee</span></li>
+							<li><span class="tit">Stars : </span><span class="txt_detail">SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee</span></li>
+						</ul>
+						<div class="pr_cnt">
+							<!-- [D] 컨텐츠 존재여부에 따라 클래스 active 추가/삭제 됩니다. -->
+							<span class="ico_cnt_type active">Poster</span>
+							<span class="ico_cnt_type active">Still Cut</span>
+							<span class="ico_cnt_type active">Script</span>
+							<span class="ico_cnt_type active">Screener</span>
+							<span class="ico_cnt_type">Quesheet</span>
+						</div><!-- .pr_cnt -->
+					</div><!-- .pr_detail_area -->
+				</div><!-- .box_program -->
+				<div class="box_program">
+					<!-- [D] .tit_pr 값과 pr_thumb 이미지 alt값이 동일하게 노출되도록 개발해주세요. -->
+					<div class="pr_thumb">
+						<span class="inner"><img src="/images/@tmp_thumb_scripted.jpg" alt="Power girl DoBongSoon(2017)"></span>
+					</div><!-- .pr_thumb -->
+					<div class="pr_detail_area">
+						<h4><a href="#" class="tit_pr">Power girl DoBongSoon<em class="pr_years">(2017)</em></a></h4>
+						<ul class="pr_detail">
+							<li><span class="tit">Director : </span><span class="txt_detail">SukYoon Kim</span></li>
+							<li><span class="tit">Writer : </span><span class="txt_detail">NamKyu Lee, HyoShin Kim, YeahLim Lee</span></li>
+							<li><span class="tit">Stars : </span><span class="txt_detail">SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun Lee, JiHyo Song, JunYoung Ahn, SunKyun LeeSunKyun Lee</span></li>
+						</ul>
+						<div class="pr_cnt">
+							<!-- [D] 컨텐츠 존재여부에 따라 클래스 active 추가/삭제 됩니다. -->
+							<span class="ico_cnt_type active">Poster</span>
+							<span class="ico_cnt_type active">Still Cut</span>
+							<span class="ico_cnt_type active">Script</span>
+							<span class="ico_cnt_type active">Screener</span>
+							<span class="ico_cnt_type">Quesheet</span>
+						</div><!-- .pr_cnt -->
+					</div><!-- .pr_detail_area -->
+				</div><!-- .box_program -->
+			</div><!-- .cont_wrap scripted_wrap -->
+			<!-- [D] 페이징 현재페이지 a태그에 active 클래스 붙여주세요. -->
+			<div id="paging">
+				<a href="#" class="btn_paging_first"><span class="sp_ico btn_first">first page</span></a>
+				<a href="#" class="btn_paging_prev"><span class="sp_ico btn_prev">prev page</span></a>
+				<a href="#" class="active">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#" class="btn_paging_next"><span class="sp_ico btn_next">next page</span></a>
+				<a href="#" class="btn_paging_last"><span class="sp_ico btn_last">last page</span></a>
+			</div><!-- #paging -->
+		</div>
+		<!-- //contents -->
+		<!-- footer -->
+		<div id="footer">
+			<div class="foot_wrap">
+			    <p class="ft_logo"><span class="sp_ico logo_foot">JTBC worldwide</span></p>
+			    <p class="copyright"><span class="sp_ico txt_copyright">Copyright © 2017 JTBC Content Hub. All rights reserved</span></p>
+			</div><!-- .foot_wrap -->
+		</div>
+		<!-- //footer -->
+		<div class="dimmed"></div>
+	</div>
+
+	<script type="text/javascript">
+	/* 마크업확인 스크립트입니다.. */
+	$('.btn_gnb_open').click(function(){
+		console.log('clicked');
+		$('.gnb_wrap').addClass('open');
+		$('.dimmed').show('');
+	});
+	$('.btn_gnb_close').click(function(){
+		$('.gnb_wrap').removeClass('open');
+		$('.dimmed').hide('');
+	});
+	</script>
+</body>
+</html>

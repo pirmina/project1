@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="description" content="JTBC worldwide hompages">
+<title>JTBC worldwide</title>
+<link rel="apple-touch-icon" sizes="57x57" href="//jtbc.joins.com/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//jtbc.joins.com//favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//jtbc.joins.com//favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//jtbc.joins.com//favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//jtbc.joins.com//favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//jtbc.joins.com//favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//jtbc.joins.com//favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//jtbc.joins.com//favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//jtbc.joins.com//favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="//jtbc.joins.com//favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//jtbc.joins.com//favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//jtbc.joins.com//favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//jtbc.joins.com//favicon/favicon-16x16.png">
+<style rel="stylesheet" type="text/css">
+body, td{margin: 10px; font:11px dotum; color:#666666;}
+a:link, a:active, a:visited { text-decoration:underline; color:#464646;}
+a:hover { text-decoration:underline; color:#008400;}
+/* index  */
+.list {width:100%;}
+table {width:100%;	border-collapse:collapse;}
+table th{color:#fff; height:25px; font-size:11px; background:#aaa; padding:2px 0 0 5px; text-align:left;}
+table td{border-bottom:1px solid #E3E3E3; color:#333333; font-size:11px; height:22px; padding:2px 0 0 5px;}
+table td.one{color:#F50002; font-size:12px;}
+table td.two{}
+span.lt{text-decoration:line-through;}
+table td.gr{color:#008400;}
+table td.three{}
+table td.Folder{font-family:verdana;}
+table td.filename{font-family:verdana; color:#aaa;}
+table td.type{font-family:verdana;color:#1928A5;}
+table td.js-link{font-family:verdana;color:#147393;}
+table td.depth{font-weight:bold;}
+table td.com{color:#0c3f86; line-height:130%; padding-top:3px;}
+table td.ing{color:#d60216; line-height:130%; padding-top:3px;}
+table td.edit{color:#999; line-height:130%; padding-top:3px;}
+table .mover{background-color:#F7F7F7;}
+table .mout{background-color:#fff;}
+table .line{height:3px; background:#E3E3E3;}
+.header{overflow:hidden;}
+h1 {float:left;color:#666666; font-size:15px; font-weight:bold; margin:5px 0 10px 0;}
+a.guide{float:left;font-size:12px;margin-left:30px;margin-top:3px;padding:2px 5px;border:1px solid #b7afaf;background-color:white;border-radius:5px;text-decoration:none;}
+a.guide:hover{background-color:#aaa;color:white;}
+</style>
+<script type="text/javascript">
+function chg_class(obj, type) {
+	if(type==1) {
+		obj.className = "mover";
+	} else {
+		obj.className = "mout";
+	}
+}
+</script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+</head>
+<body>
+<div class="header">
+	<h1>JTBC 글로벌 브로슈어 코딩리스트</h1>
+	<a href="layout.html" target="_blank" class="guide">코딩가이드</a>
+</div>
+
+<div id="list">
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<colgroup>
+		<col width="15%">
+		<col width="15%">
+		<col width="15%">
+		<col width="15%">
+		<col width="20%">
+		<col width="20%">
+	</colgroup>
+	<tr>
+		<th>1Depth</th>
+		<th>2Depth</th>
+		<th>3Depth</th>
+		<th>File-name</th>
+		<th>진행일정</th>
+		<th>비고</th>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one">Home</td>
+		<td class="two">메인</td>
+		<td class="three"></td>
+		<td class="filename"><a href="main.html" target="_blank">main.html</a></td>
+		<td class="com">2015-03-10 (진행)</td>
+		<td class="etc"></td>
+	</tr>
+
+	<tr><td colspan="6" class="line"></td></tr>
+
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one">Script</td>
+		<td class="two">목록</td>
+		<td class="three"></td>
+		<td class="filename"><a href="subA_script.html" target="_blank">subA_script.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc">2015-03-16 : sorting 영역 수정됨 (<a href="http://211.218.152.76:8080/gitblit/blobdiff/WEB!JTBC_GLOBAL_Html.git/3ab12ecd1dd3d518bd92fee5b499dccb544d02b8/dev!subA_script.html" target="_blank">diff보기</a>)</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">데이터없음</td>
+		<td class="filename"><a href="subA_script_nodata.html" target="_blank">subA_script_nodata.html</a></td>
+		<td class="com">2015-03-17 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">상세내용</td>
+		<td class="three">Basic Info</td>
+		<td class="filename"><a href="subA_script_basicinfo.html" target="_blank">subA_script_basicinfo.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">Material</td>
+		<td class="filename"><a href="subA_script_material.html" target="_blank">subA_script_material.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+
+	<tr><td colspan="6" class="line"></td></tr>
+
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one">Format</td>
+		<td class="two">목록</td>
+		<td class="three"></td>
+		<td class="filename"><a href="subA_format.html" target="_blank">subA_format.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc">타이틀 이미지파일 필요<br>2015-03-16 : sorting 영역 수정됨 (<a href="http://211.218.152.76:8080/gitblit/blobdiff/WEB!JTBC_GLOBAL_Html.git/3ab12ecd1dd3d518bd92fee5b499dccb544d02b8/dev!subA_format.html" target="_blank">diff보기</a>)</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">상세내용</td>
+		<td class="three">Basic Info</td>
+		<td class="filename"><a href="subA_format_basicinfo.html" target="_blank">subA_format_basicinfo.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+
+	<tr><td colspan="6" class="line"></td></tr>
+
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one">Join / Log-in</td>
+		<td class="two">myinfo</td>
+		<td class="three">회원정보 입력</td>
+		<td class="filename"><a href="subB_myinfo.html" target="_blank">subB_myinfo.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc">확인버튼은 없는지 검토부탁드립니다.</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">register</td>
+		<td class="three">회원가입</td>
+		<td class="filename"><a href="subB_register01_1.html" target="_blank">subB_register01_1.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc">모바일에서 REGISTER|Welcome to JTBC worldwide!  이미지 텍스트 크기 확인 요청드립니다.</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">Register Term&amp;Condition 페이지</td>
+		<td class="filename"><a href=".html" target="_blank">.html</a></td>
+		<td class="com"></td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">회원가입 완료</td>
+		<td class="filename"><a href="subB_register01_2.html" target="_blank">subB_register01_2.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">본인인증</td>
+		<td class="filename"><a href="subB_register01_3.html" target="_blank">subB_register01_3.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">비밀번호 변경</td>
+		<td class="filename"><a href="subB_register01_4.html" target="_blank">subB_register01_4.html</a></td>
+		<td class="com">2015-03-10 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+
+	<tr><td colspan="6" class="line"></td></tr>
+
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one">Contact</td>
+		<td class="two">Business Territory</td>
+		<td class="three"></td>
+		<td class="filename"><a href="subC_contact_business.html" target="_blank">subC_contact_business.html</a></td>
+		<td class="com">2015-03-3 (완료)</td>
+		<td class="etc">마스크 이미지 교체필요(<a href="/images/img_mask.png" target="_blank">이미지보기</a>)</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">Request</td>
+		<td class="three"></td>
+		<td class="filename"><a href="subC_contact_request.html" target="_blank">subC_contact_request.html</a></td>
+		<td class="com">2015-03-6 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">완료페이지</td>
+		<td class="filename"><a href="subC_contact_request_done.html" target="_blank">subC_contact_request_done.html</a></td>
+		<td class="com">2015-03-7 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">Q&amp;A</td>
+		<td class="three">Q&amp;A리스트페이지</td>
+		<td class="filename"><a href="subC_contact_qna01.html" target="_blank">subC_contact_qna01.html</a></td>
+		<td class="com">2015-03-6 (완료)</td>
+		<td class="etc">블록된글 표시, 새글 디자인가이드 없는지요?(새글표시관련해서는 기획서에 없습니다만 확인부탁드립니다)</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">Q&amp;A 뷰페이지</td>
+		<td class="filename"><a href="subC_contact_qna02.html" target="_blank">subC_contact_qna02.html</a></td>
+		<td class="com">2015-03-6 (완료)</td>
+		<td class="etc">글수정버튼추가됨(주석처리)</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">Q&amp;A 글작성페이지</td>
+		<td class="filename"><a href="subC_contact_qna03.html" target="_blank">subC_contact_qna03.html</a></td>
+		<td class="com">2015-03-6 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two"></td>
+		<td class="three">Q&amp;A 레이어팝업</td>
+		<td class="filename"><a href="subC_contact_qnaup.html" target="_blank">subC_contact_qnaup.html</a></td>
+		<td class="com">2015-03-6 (완료)</td>
+		<td class="etc">forgot your password 타이틀 검토요청</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">Content market</td>
+		<td class="three"></td>
+		<td class="filename"><a href="subC_contact_contentmarket.html" target="_blank">subC_contact_contentmarket.html</a></td>
+		<td class="com">2015-03-3 (완료)</td>
+		<td class="etc"></td>
+	</tr>
+	<tr><td colspan="6" class="line"></td></tr>
+
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one">about JTBC</td>
+		<td class="two"></td>
+		<td class="three"></td>
+		<td class="filename"><a href=".html" target="_blank">.html</a></td>
+		<td class="com"></td>
+		<td class="etc"></td>
+	</tr>
+	<tr><td colspan="6" class="line"></td></tr>
+
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one">etc</td>
+		<td class="two">오류페이지</td>
+		<td class="three"></td>
+		<td class="filename"><a href=".html" target="_blank">.html</a></td>
+		<td class="com"></td>
+		<td class="etc"></td>
+	</tr>
+
+	<tr><td colspan="6" class="line"></td></tr>
+
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one">Guide</td>
+		<td class="two">layout</td>
+		<td class="three">퍼블리싱 가이드</td>
+		<td class="filename"><a href="layout.html" target="_blank">layout.html</a></td>
+		<td class="com"></td>
+		<td class="etc"></td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">타이틀 모음</td>
+		<td class="three"></td>
+		<td class="filename"><a href="title.html" target="_blank">title.html</a></td>
+		<td class="com"></td>
+		<td class="etc">타이틀 이미지 필요(non-scripted, sports/awards, digital original)</td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">모바일 GNB 확인페이지</td>
+		<td class="three"></td>
+		<td class="filename"><a href="_gnb.html" target="_blank">_gnb.html</a></td>
+		<td class="com"></td>
+		<td class="etc">로그인 전 상단 welcome 텍스트 지정 부탁드립니다. (dimmed 동작은 임의로 넣었습니다.) </td>
+	</tr>
+	<tr onmouseover="chg_class(this, 1)" onmouseout="chg_class(this, 0)">
+		<td class="one"></td>
+		<td class="two">로그인 팝업 확인페이지</td>
+		<td class="three"></td>
+		<td class="filename"><a href="_layer_login.html" target="_blank">_layer_login.html</a></td>
+		<td class="com"></td>
+		<td class="etc"></td>
+	</tr>
+
+	</table>
+</div><!-- #list -->
+</body>
+</html>

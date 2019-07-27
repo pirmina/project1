@@ -1,0 +1,15 @@
+csscomb.json
+
+## dist files
+##www/*
+
+node_modules/*
+node_modules/**/*
+##gulpfile.js
+
+package.json
+
+##README.md
+spritesheet-templates.js
+dev/templates/*
+npm-debug.log

@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="description" content="JTBC worldwide hompages">
+<title>JTBC worldwide</title>
+<link rel="apple-touch-icon" sizes="57x57" href="//jtbc.joins.com/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//jtbc.joins.com//favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//jtbc.joins.com//favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//jtbc.joins.com//favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//jtbc.joins.com//favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//jtbc.joins.com//favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//jtbc.joins.com//favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//jtbc.joins.com//favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//jtbc.joins.com//favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="//jtbc.joins.com//favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//jtbc.joins.com//favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="//jtbc.joins.com//favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//jtbc.joins.com//favicon/favicon-16x16.png">
+<link rel="stylesheet" href="/css/styles.css" type="text/css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/ux_common.js"></script>
+<script type="text/javascript" src="/js/modernizr-custom.js"></script>
+<script type="text/javascript" src="/js/swiper.min.js"></script>
+<script type="text/javascript" src="/js/include-html.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/js/respond.min.js"></script>
+<![endif]-->
+<style>
+/*가이드 스타일입니다.*/
+.fl{float:left;}
+.fl + .fl{margin-left:50px;}
+.fl4 .fl{width:23.3%;margin-left:20px;}
+.cl{clear:both;}
+._guide_head{width:1245px;margin:0 auto;padding:20px 0 30px;}
+._guide_title{padding:20px 0 20px;color:#333;font-size:32px;font-weight:bold;}
+._guide_head p{font-style:italic;font-size:12px;}
+._guide_tit{width:1245px;margin:0 auto;padding:50px 0 5px;color:#666;font-size:30px;border-bottom:2px solid #999;font-weight:500;}
+._guid_tit_list{width:1205px;margin:0 auto;border:5px solid #f6f6f6;padding:10px 20px;}
+._guid_tit_list li{font-size:16px;text-decoration:underline;line-height:30px;}
+._guide_cont{position:relative;width:1245px;margin:20px auto;}
+._guide_cont p{padding:10px 0 0;}
+._guid_list{width:1245px;padding:0 0 10px;}
+._guid_list>li{position:relative;font-size:14px;line-height:22px;color:#666;padding-left:10px;}
+._guid_list>li:after{content:'';display:block;position:absolute;left:0;top:7px;width:3px;height:3px;background-color:#666;}
+._guid_list>li a{background-color:#eae9e9}
+pre{ white-space:pre-wrap; /*공백이나 탭공간을 그대로 둔다*/ word-break:break-all; /*텍스트가 넘칠경우 줄바꿈을 해준다*/ }
+.pre_wrap{margin:10px 0;padding:15px;border:2px dotted #eae9e9;font-size:12px;background-color:#fdf3f3;}
+._guide_layout{margin:20px auto;padding:15px;border:1px solid #c4c4c4;font-size:12px;background-color:#f6f4f4;}
+._guide_layout ul{padding-left:20px;}
+._guide_layout>ul{padding-left:0;}
+._guide_layout ul + ul {margin-top:10px;}
+b{background-color:#fffb6f;font-weight:normal;}
+.comment{margin-left:10px;color:#bdbdbd;font-style:italic;}
+._layout{position:relative;margin:10px 0;width:330px;height:445px;border:3px solid #e0e0e0;}
+._layout span{position:absolute;top:5px;right:5px;font-size:14px;color:#666;}
+._layout div{position:relative;margin:15px auto;}
+._layout_inner{width:100%;height:100%;}
+._layout_u_skip{width:90%;height:5%;border:2px solid #bbb;}
+._layout_wrap{width:90%;height:80%;border:2px solid #bbb;}
+._layout_header{width:90%;height:10%;border:1px dashed #aaa;}
+._layout_gnb{width:90%;height:10%;border:1px dashed #aaa;}
+._layout_contents{width:90%;height:40%;border:1px dashed #aaa;}
+._layout_footer{width:90%;height:10%;border:1px dashed #aaa;}
+._layou_dimmed{width:90%;height:5%;border:1px dashed #aaa;}
+.s_box{display:inline-block;width:20px;height:20px;margin-right:10px;vertical-align:middle;}
+._color_list{font-size:14px;line-height:20px;}
+._color_list li{margin-top:5px;}
+._color_list li:first-child{margin-top:0;}
+</style>
+</head>
+<body>
+	<ul id="u_skip">
+		<li><a href="#gnb">main menu</a></li>
+		<li><a href="#contents">contents</a></li>
+	</ul>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header"></div>
+		<div id="gnb"></div>
+		<!-- //header -->
+		<!-- contents -->
+		<div id="contents">
+			<div class="cont_wrap">
+				<!-- <h3 class="h3">다음시작헤딩</h3>-->
+				<!-- 컨텐츠 영역 -->
+			</div>
+			<div class="_guide_head">
+				<h3 class="_guide_title">HTML GUIDE</h3>
+				<p>*README.md 파일에 옮기기 전 작업중인 가이드 페이지 입니다. </p>
+			</div>
+			<ul class="_guid_tit_list">
+			<li style="border-bottom:1px solid #e6e6e6;text-decoration:none;margin-bottom:10px;">목차</li>
+			<li><a href="#list0">스크립트 &amp; 요청사항</a></li>
+			<li><a href="#list1">1. Basic</a></li>
+			<li><a href="#list2">2. 파일구조</a></li>
+			<li><a href="#list3">3. Layout과 스킵메뉴</a></li>
+			<li><a href="#list4">4. Color</a></li>
+			<li><a href="#list5">5. Heading, Title</a></li>
+			<li><a href="#list6">6. Tab 영역</a></li>
+			<li><a href="#list7">7. Button</a></li>
+			<li><a href="#list8">8. Paging</a></li>
+			<li><a href="#list9">9. INPUT, SELECT (Sorting)</a></li>
+			<li><a href="#list10">10. Language select</a></li>
+			<li><a href="#list11">11. Form Table ( .tbl_form .tbl_board )</a></li>
+			<li><a href="#list12">12. Flex Box</a></li>
+			<li><a href="#list13">13. Ellipsis</a></li>
+			<li><a href="#list14">14. LayerPopup</a></li>
+			<li><a href="#list15">15. 주요 공통 클래스</a></li>
+			<li><a href="#list16">16. Gulp Sprite Smith 활용</a></li>
+			<li><a href="#list17">17. SwiperJS</a></li>
+			<!--<li><a href="#list18">18. ETC</a></li>-->
+			</ul>
+			<!-- list -->
+			<h4 class="_guide_tit" id="list0">스크립트 &amp; 요청사항</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>스크립트&amp;개발시 주석 참고 :  <b>&lt;!-- [D] --&gt;</b> </li>
+				<li>2줄이상 말줄임 개발 필요 : material 제목부분 등  (ie/firefox css 말줄임 불가,  chrome, safari, opera에서는 css 자동말줄임됨)</li>
+				<li>ie7,8 필요한 스크립트
+					<ul>
+					<li>#1. placeholder (예시페이지 : <a href="subB_register01_1.html" target="_blank">subB_register01_1.html</a>)</li>
+					<li>#2. full_bg_wrap : 홀수짝수 css선택자, last div.full_bg_wrap 에 클래스 addClass "last" 넣어주세요. (<a href="subA_script_material.html" target="_blank">subA_script_material.html</a>)</li>
+					</ul>
+				</li>
+				</ul>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list0">마크업 작업안된부분(작업후 삭제해주세요.)</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>GNB 상단 로그아웃시 텍스트</li>
+				<li>모바일 화면 확인</li>
+				<li>태블릿 화면 디자인 검수</li>
+				<li>오류페이지</li>
+				<li>이미지 미리보기 DB없을때 기본썸네일..bg_db_basic.png 이미지, 백그라운드 컬러, bg_db_contact.jpg 교체하면됩니다.</li>
+				<li>이미지 타이틀 sprite 작업 _media.less 에서는 <br>
+					<pre>
+.tit_scripted{
+	margin-left:-96.5px/2;
+}
+					</pre>이렇게 작업해주세요.
+				</li>
+				<li>작업완료후 임시파일(/images/@tmp_**.jpg)삭제 부탁드립니다.</li>
+				</ul>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list1">1. Basic</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>html5로 작성된 ie7~최신 브라우저, chrome 크로스브라우징 반응형 사이트입니다.</li>
+				<li>lang = "en" 외국어사이트 입니다.(일부 컨텐츠에서 중국어, 일본어, 에스파뇰 포함합니다.)</li>
+				<li>DOCTYPE 아래 if조건문 주석으로 ie7, ie8일때 클래스가 추가됩니다.
+					<ul>
+					<li>&lt;!--[if IE 7]&gt;&lt;html lang="en" class="ie7"&gt;&lt;![endif]--&gt;</li>
+					<li>&lt;!--[if IE 8]&gt;&lt;html lang="en" class="ie8"&gt;&lt;![endif]--&gt;</li>
+					</ul>
+				</li>
+				<li>메타태그 : http-equiv="Expires" content="-1" 사용으로 익스플로러에서 더욱 빠르게 로딩되도록 합니다.</li>
+				<li>메타태그 - viewport : content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" 반응형으로 로딩되도록 합니다.</li>
+				<li>메타태그 - description : 자세한 description 작성으로 페이지에 대한 짧은 설명을 제공하여 검색엔진 최적화합니다.</li>
+				<li>메타태그 - og : 페이스북 활용태그입니다. (개발미적용시 삭제할 항목)</li>
+				<li>apple-touch-icon, icon 파비콘을 추가합니다. (파비콘 링크는 http://jtbc.joins.com/ 로 부터 받아옵니다.)</li>
+				<li>Register 페이지는 html에 클래스 .bg_colored 추가해주세요.</li>
+				<li>ie7 크로스브라우징 소스는 images/ie7_**.png, _ie_browser.less 파일에서 .ie7{*} 입니다.</li>
+				<li>웹접근성 일부 준수하여 시멘틱한 코드로 작업되었습니다.</li>
+				<li>Less파일 스타일 작성시, PC 기준으로(_common.less) 작성한 후 _media.less 또는 미디어쿼리로 모바일 스타일 작성해주세요.</li>
+				<li>PC : 1025px 이상의 화면, 미디어쿼리 없이 작성.</li>
+				<li>모바일 : @media all and (max-width:1024px)</li>
+				<li>태블릿 : @media (min-width:768px) and (max-width:1024px)</li>
+				</ul>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list2">2. 파일구조</h4>
+			<div class="_guide_cont fl4">
+				<div class="fl">
+					1) html 파일구조
+					<div class="_guide_layout">
+						<ul>
+						<li>dev/ <em class="comment">// 작업환경</em>
+							<ul>
+							<li>layout
+								<ul>
+								<li>header.html</li>
+								<li>gnb.html</li>
+								<li>footer.html</li>
+								<li>header_register.html</li>
+								<li>footer_register.html</li>
+								</ul>
+							</li>
+							<li>subA_*.html</li>
+							<li>subB_*.html</li>
+							<li>subB_register_*.html</li>
+							<li>subC_*.html</li>
+							<li>title.html<em class="comment">// none-scripted, sports/awards, digital original  타이틀 </em></li>
+							</ul>
+						</li>
+						</ul>
+						<ul>
+						<li>www/ <em class="comment">// dev와 동일 dist파일, 개발전달파일</em></li>
+						</ul>
+					</div>
+				</div>
+				<div class="fl">
+					2) less/css 파일구조
+					<div class="_guide_layout">
+						<ul>
+						<li>dev/
+							<ul>
+							<li>_reset.less</li>
+							<li>_mixin.less</li>
+							<li>_variables.less</li>
+							<li>_sprite.less<em class="comment">// gulp spritesmith로 자동으로 생성되는 파일</em></li>
+							<li>_layout.less</li>
+							<li>_common.less<em class="comment">// PC 스타일</em></li>
+							<li>_media.less<em class="comment">// 모바일, 태블릿 스타일 포함</em></li>
+							<li>_popup.less<em class="comment">// PC, 모바일, 태블릿 팝업 스타일</em></li>
+							<li>_main.less</li>
+							<li>swiper.less</li>
+							<li>_ie_browser.less<em class="comment">// ie7,ie8 스타일</em></li>
+							</ul>
+						</li>
+						</ul>
+						<ul>
+						<li>www/
+							<ul>
+							<li>css/
+								<ul>
+								<li>styles.css</li>
+								</ul>
+							</li>
+							</ul>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="fl">
+					3) js 파일구조
+					<div class="_guide_layout">
+						<ul>
+						<li>dev/
+							<ul>
+							<li>js/
+								<ul>
+								<li>common.js</li>
+								<li>include-html.js <em class="comment">//html include 스크립트 </em></li>
+								<li>jquery.js</li>
+								<li>less.min.js</li>
+								<li>main.js</li>
+								<li>modernizr-custom.js</li>
+								<li>swiper.jquery.min.js<em class="comment">//swiper </em></li>
+								<li>swiper.min.js<em class="comment">//swiper </em></li>
+								<li>ux_common.js<em class="comment">// ui 테스트 스크립트 </em></li>
+								</ul>
+							</li>
+							</ul>
+						</li>
+						</ul>
+						<ul>
+						<li>www/
+							<ul>
+							<li>js/ <em class="comment">// dev와 동일</em></li>
+							</ul>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="fl">
+					4) images 파일구조
+					<div class="_guide_layout">
+						<ul>
+						<li>dev/
+							<ul>
+							<li>images/
+								<ul>
+								<li>sprite.png</li>
+								<li>jpg, png, gif 등 이미지 파일<em class="comment">// 임시 이미지 파일 포함 - 임시이미지파일명: @tmp_* </em></li>
+								<li>ie7_*.png  <em class="comment">// ie7에서만 쓰이는 이미지입니다. </em></li>
+								<li>sp/
+									<ul>
+									<li>*.png 모든 스프라이트 이미지 <em class="comment">// png만 스프라이트 이미지 가능</em></li>
+									<li>*_x2.png <em class="comment">// 레티나 이미지 파일명 통일</em></li>
+									</ul>
+								</li>
+								</ul>
+							</li>
+							</ul>
+						</li>
+						</ul>
+						<ul>
+						<li>www/
+							<ul>
+							<li>images/
+								<ul>
+								<li>sprite.png <em class="comment">// 스프라이트 이미지 (sp폴더에 이미지들은 제외됩니다.)</em> </li>
+								<li>jpg, png, gif 등 이미지 파일</li>
+								</ul>
+							</li>
+							</ul>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cl"></div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list3">3. Layout과 스킵메뉴</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>레이아웃은 기본페이지, Register 관련 페이지 두가지 종류가 있습니다.</li>
+				<li>기본레이아웃 스킵메뉴, gnb가 제외되는 스킵메뉴 2종 사용</li>
+				</ul>
+				<div class="fl">
+					<p>1) 기본 레이아웃 페이지</p>
+					<div class="_layout">
+						<div class="_layout_inner">
+							<div class="_layout_u_skip"><span>#u_skip</span></div>
+							<div class="_layout_wrap">
+								<span>#wrap</span>
+								<div class="_layout_header"><span>#header</span></div>
+								<div class="_layout_gnb"><span>#gnb</span></div>
+								<div class="_layout_contents"><span>#contents</span></div>
+								<div class="_layout_footer"><span>#footer</span></div>
+								<div class="_layou_dimmed"><span>.dimmed</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="fl">
+					<p>2) Register 페이지</p>
+					<div class="_layout">
+						<span>.bg_colored</span>
+						<div class="_layout_u_skip"><span>#u_skip</span></div>
+						<div class="_layout_wrap">
+							<span>#wrap</span>
+							<div class="_layout_header"><span>#header_register</span></div>
+							<div class="_layout_gnb"><span>#gnb</span></div>
+							<div class="_layout_contents"><span>#contents.contents_register</span></div>
+							<div class="_layout_footer"><span>#footer_register</span></div>
+							<div class="_layou_dimmed"><span>.dimmed</span></div>
+						</div>
+					</div>
+				</div>
+				<p class="cl">3) 기본 레이아웃의 스킵메뉴</p>
+				<div class="pre_wrap">
+				<pre>
+&lt;ul id="u_skip"&gt;
+	&lt;li&gt;&lt;a href="#gnb"&gt;main menu&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#contents"&gt;contents&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+				</pre>
+				</div>
+				<p>4) Register 페이지의 스킵메뉴</p>
+				<div class="pre_wrap">
+				<pre>
+&lt;ul id="u_skip"&gt;
+	&lt;li&gt;&lt;a href="#contents"&gt;contents&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list4">4. Color ( _variables.less )</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>※ _variables에 쓰인 색상 이외에 개별적으로 쓰인 컬러가 많습니다. 상세한 컬러가이드로 확정해주세요.</li>
+				</ul>
+				<ul class="_color_list">
+				<li><span class="s_box" style="background-color:#333;"></span>@color_primary:#333;</li>
+				<li><span class="s_box" style="background-color:#666;"></span>@color_secondary:#666;</li>
+				<li><span class="s_box" style="background-color:#999;"></span>@color_thirdary:#999;</li>
+				<li><span class="s_box" style="background-color:#1a1a1a;"></span>@color_text_strong:#1a1a1a;</li>
+				<li><span class="s_box" style="background-color:#b3b3b3;"></span>@color_text_weak:#b3b3b3;</li>
+				<li><span class="s_box" style="background-color:#ff3091;"></span>@color_point:#ff3091;</li>
+				<li><span class="s_box" style="background-color:#e8e8e8;"></span>@color_border:#e8e8e8;</li>
+				<li><span class="s_box" style="background-color:#ddd;"></span>@color_border2:#ddd;</li>
+				<li><span class="s_box" style="background-color:#ccc;"></span>@color_border_input:#ccc;</li>
+				<li><span class="s_box" style="background-color:#f8f8f8;"></span>@color_background_shade:#f8f8f8;</li>
+				<li><span class="s_box" style="background-color:#f2f2f2;"></span>@color_background_basic:#f2f2f2;</li>
+				<li><span class="s_box" style="background-color:#fff;"></span>@white:#fff;</li>
+				<li><span class="s_box" style="background-color:#000;"></span>@black:#000;</li>
+				</ul>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list5">5. Heading, Title</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>기본 이미지타이틀(h2타이틀) 일때는  class="heading"</li>
+				<li>기본 이미지 타이틀아래 탭영역이 올때는 class="heading tab_heading",  클래스가 추가됩니다.</li>
+				<li>텍스트타이틀(h3 혹은 어드민입력값)일때는 class="heading text_heading",  클래스가 추가됩니다.<br>
+				**텍스트타이틀 후에 탭영역이 올때도 class="heading text_heading" 으로 통일합니다. </li>
+				<li>네비게이션은 PC일때만 노출되며 현재페이지에 클래스 current 추가합니다.</li>
+				</ul>
+				<p>1) 기본 이미지타이틀(h2타이틀) 일때</p>
+				<div class="heading">
+					<h3 class="tit_h3"><span class="sp_ico tit_scripted">Scripted</span></h3>
+					<ol class="navigation">
+						<li class="home"><span class="sp_ico ico_home">Home</span></li>
+						<li class="current">Scripted</li>
+					</ol>
+				</div><!-- .heading -->
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="<b>heading</b>"&gt;
+	&lt;h3 class="tit_h3"&gt;&lt;span class="sp_ico tit_contact"&gt;Contact&lt;/span&gt;&lt;/h3&gt;
+	&lt;ol class="<b>navigation</b>"&gt;
+		&lt;li class="home"&gt;&lt;span class="sp_ico ico_home"&gt;Home&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;Contact&lt;/li&gt;
+		&lt;li class="<b>current</b>"&gt;Request&lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/div&gt;&lt;!-- .heading --&gt;
+				</pre>
+				</div>
+				<p>2) 기본 이미지 타이틀아래 탭영역이 올때</p>
+				<div class="heading tab_heading">
+					<h3 class="tit_h3"><span class="sp_ico tit_contact">Contact</span></h3>
+					<ol class="navigation">
+						<li class="home"><span class="sp_ico ico_home">Home</span></li>
+						<li>Contact</li>
+						<li class="current">Business Territory</li>
+					</ol>
+				</div><!-- .heading tab_heading -->
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="heading <b>tab_heading</b>"&gt;
+	&lt;h3 class="tit_h3 mo"&gt;&lt;span class="sp_ico tit_scripted"&gt;Scripted&lt;/span&gt;&lt;/h3&gt;
+	&lt;h4 class="tit_h4"&gt;Power girl DoBongSoon(2017)&lt;/h4&gt;
+	&lt;ol class="navigation"&gt;
+		&lt;li class="home"&gt;&lt;span class="sp_ico ico_home"&gt;Home&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;Scripted&lt;/li&gt;
+		&lt;li class="current"&gt;Power girl dobongsoon&lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/div&gt;&lt;!-- .heading --&gt;
+				</pre>
+				</div>
+				<p>3) 텍스트타이틀(h3 혹은 어드민입력값)일때</p>
+				<div class="heading text_heading">
+					<h3 class="tit_h3 mo"><span class="sp_ico tit_format">Format</span></h3>
+					<h4 class="tit_h4">Power girl DoBongSoon(2017)</h4>
+					<ol class="navigation">
+						<li class="home"><span class="sp_ico ico_home">Home</span></li>
+						<li>Scripted</li>
+						<li class="current">Power girl dobongsoon</li>
+					</ol>
+				</div><!-- .heading -->
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="heading <b>text_heading</b>"&gt;
+	&lt;h3 class="tit_h3 mo"&gt;&lt;span class="sp_ico tit_scripted"&gt;Scripted&lt;/span&gt;&lt;/h3&gt;
+	&lt;h4 class="tit_h4"&gt;Power girl DoBongSoon(2017)&lt;/h4&gt;
+	&lt;ol class="navigation"&gt;
+		&lt;li class="home"&gt;&lt;span class="sp_ico ico_home"&gt;Home&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;Scripted&lt;/li&gt;
+		&lt;li class="current"&gt;Power girl dobongsoon&lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/div&gt;&lt;!-- .heading --&gt;
+				</pre>
+				</div>
+				<p>4)타이틀 텍스트 타입</p>
+				<h3 class="tit_txt_type1">타이틀 텍스트 타입1</h3>
+				<div class="pre_wrap">
+				<pre>
+&lt;h3 class="<b>tit_txt_type1</b>">타이틀 텍스트 타입1&lt;/h3>
+				</pre>
+				</div>
+				<h3 class="tit_txt_type2">타이틀 텍스트 타입2</h3>
+				<div class="pre_wrap">
+				<pre>
+&lt;h3 class="<b>tit_txt_type2</b>">타이틀 텍스트 타입2&lt;/h3>
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list6">6. Tab 영역</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>탭2개일 때가 기본으로 탭4개일 때 총 2가지 생성됨</li>
+				<li>탭4개일때 div.tab에 .tab4 클래스 추가됩니다.</li>
+				</ul>
+				<p>1) 탭 2개일때 (기본)</p>
+				<!-- tab component -->
+				<div class="tab_area">
+					<ul class="tab">
+						<!-- [D] 탭 선택시 li에 addClass "on" 붙여주세요 -->
+						<li><a href="#"><h5>Basic Info</h5></a></li>
+						<li class="on"><a href="#"><h5>Material</h5></a></li>
+					</ul>
+				</div><!-- .tab_area -->
+				<!-- //tab component -->
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="tab_area">
+	&lt;ul class="tab">
+		&lt;!-- [D] 탭 선택시 li에 addClass "on" 붙여주세요 -->
+		&lt;li>&lt;a href="#">&lt;h5>Basic Info&lt;/h5>&lt;/a>&lt;/li>
+		&lt;li class="on">&lt;a href="#">&lt;h5>Material&lt;/h5>&lt;/a>&lt;/li>
+	&lt;/ul>
+&lt;/div>&lt;!-- .tab_area -->
+				</pre>
+				</div>
+				<p>2) 탭 4개일때 </p>
+				<!-- tab component -->
+				<div class="tab_area">
+					<ul class="tab tab4">
+						<!-- [D] 탭 선택시 li에 addClass "on" 붙여주세요 -->
+						<li class="on"><a href="#"><h4>Business <em class="br">Territory</em></h4></a></li>
+						<li><a href="#"><h4>Request</h4></a></li>
+						<li><a href="#"><h4>Q&amp;A</h4></a></li>
+						<li><a href="#"><h4>Content <em class="br">Market</em></h4></a></li>
+					</ul>
+				</div><!-- .tab_area -->
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="tab_area">
+	&lt;ul class="tab <b>tab4</b>">
+		&lt;!-- [D] 탭 선택시 li에 addClass "on" 붙여주세요 -->
+		&lt;li>&lt;a href="#">&lt;h4>Business &lt;em class="br">Territory&lt;/em>&lt;/h4>&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="#">&lt;h4>Request&lt;/h4>&lt;/a>&lt;/li>
+		&lt;li class="on">&lt;a href="#">&lt;h4>Q&amp;A&lt;/h4>&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="#">&lt;h4>Content &lt;em class="br">Market&lt;/em>&lt;/h4>&lt;/a>&lt;/li>
+	&lt;/ul>
+&lt;/div>&lt;!-- .tab_area -->
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list7">7. Button</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>앵커 또는 버튼 태그에 class="btn" 추가하면 기본 버튼 스타일이 입혀집니다.(기본 width는 100%)</li>
+				<li>.btn_area 안에 버튼은 기본 width값 49%로 오른쪽/왼쪽 플롯됩니다.</li>
+				<li>popup 버튼은 따로 _popup.less를 참조해주세요.</li>
+				</ul>
+				<p>1) Large Height Button</p>
+				<div class="btn_area">
+					<a href="#" class="btn btn_lg_type1">Button</a>
+					<a href="#" class="btn btn_lg_type2">Button</a>
+				</div>
+				<div class="pre_wrap">
+				<pre>
+height 62px (@media max-width1024px : height 40px)
+&lt;a href="#" class="btn <b>btn_lg_type1</b>">Button&lt;/a>
+&lt;a href="#" class="btn <b>btn_lg_type2</b>">Button&lt;/a>
+				</pre>
+				</div>
+				<p>2) Middle Height Button</p>
+				<div class="btn_area">
+					<a href="#" class="btn btn_md_type1">Button</a>
+					<a href="#" class="btn btn_md_type2">Button</a>
+				</div>
+				<div class="btn_area">
+					<a href="#" class="btn btn_md_type3">Button</a>
+					<a href="#" class="btn btn_md_type4">Button</a>
+				</div>
+				<div class="pre_wrap">
+				<pre>
+height 45px (@media max-width1024px : height 35px)
+&lt;a href="#" class="btn <b>btn_md_type1</b>">Button&lt;/a>
+&lt;a href="#" class="btn <b>btn_md_type2</b>">Button&lt;/a>
+
+height 50px (@media max-width1024px : height 35px)
+&lt;a href="#" class="btn <b>btn_md_type3</b>">Button&lt;/a>
+&lt;a href="#" class="btn <b>btn_md_type4</b>">Button&lt;/a>
+				</pre>
+				</div>
+				<p>3) Small Height Button : height 62px button</p>
+				<a href="#" class="btn btn_sm_type1">Button</a>
+				<a href="#" class="btn btn_sm_type2">Button</a>
+				<div class="pre_wrap">
+				<pre>
+height 38px BG:White (@media max-width1024px : height 25px)
+&lt;a href="#" class="btn <b>btn_sm_type1</b>">Button&lt;/a>
+
+height 38px BG:Gray (@media max-width1024px : height 30px)
+&lt;a href="#" class="btn <b>btn_sm_type2</b>">Button&lt;/a>
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list8">8. Paging</h4>
+			<div class="_guide_cont">
+				<!-- [D] 페이징 현재페이지 a태그에 active 클래스 붙여주세요. -->
+				<div id="paging">
+					<a href="#" class="btn_paging_first"><span class="sp_ico btn_first">first page</span></a>
+					<a href="#" class="btn_paging_prev"><span class="sp_ico btn_prev">prev page</span></a>
+					<a href="#" class="active">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#" class="btn_paging_next"><span class="sp_ico btn_next">next page</span></a>
+					<a href="#" class="btn_paging_last"><span class="sp_ico btn_last">last page</span></a>
+				</div><!-- #paging -->
+				<div class="pre_wrap">
+				<pre>
+&lt;!-- [D] 페이징 현재페이지 a태그에 active 클래스 붙여주세요. -->
+&lt;div id="paging">
+	&lt;a href="#" class="btn_paging_first">&lt;span class="sp_ico btn_first">first page&lt;/span>&lt;/a>
+	&lt;a href="#" class="btn_paging_prev">&lt;span class="sp_ico btn_prev">prev page&lt;/span>&lt;/a>
+	&lt;a href="#" class="active">1&lt;/a>
+	&lt;a href="#">2&lt;/a>
+	&lt;a href="#">3&lt;/a>
+	&lt;a href="#">4&lt;/a>
+	&lt;a href="#">5&lt;/a>
+	&lt;a href="#" class="btn_paging_next">&lt;span class="sp_ico btn_next">next page&lt;/span>&lt;/a>
+	&lt;a href="#" class="btn_paging_last">&lt;span class="sp_ico btn_last">last page&lt;/span>&lt;/a>
+&lt;/div>&lt;!-- #paging -->
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list9">9. INPUT, SELECT (Sorting)</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>label 값과 input ID값 일치시켜서 개발.</li>
+				<li>warning 문구는 각 주석에서 명시하는 태그에 클래스 warning을 붙여주면 display:block 처리됩니다.</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				</ul>
+				<p>1) Input (text, email, password, tel ..etc), textarea</p>
+				<input type="text" name="" value="" id="" placeholder= "text">
+				<input type="email" name="" value="" id="" placeholder= "email">
+				<input type="tel" name="" value="" id="" placeholder= "tel">
+				<div class="tbl_form">
+					<dl>
+						<!-- [D] 경고문구생성 시 dt, dd에 addClass warning 붙여주세요. -->
+						<dt class="tit warning"><label for="rpw_reg">Password</label></dt>
+						<dd class="warning">
+							<input type="password" name="" value="" id="rpw_reg">
+							<p class="txt_warn">Password do not match</p>
+						</dd>
+					</dl>
+				</div><!-- .tbl_form -->
+				<div class="pre_wrap">
+				<pre>
+&lt;input type="text" name="" value="" id="" placeholder= "text">
+&lt;input type="email" name="" value="" id="" placeholder= "email">
+&lt;input type="tel" name="" value="" id="" placeholder= "tel">
+
+&lt;div class="tbl_form">
+	&lt;dl>
+		&lt;!-- [D] 경고문구생성 시 dt, dd에 addClass warning 붙여주세요. -->
+		&lt;dt class="tit <b>warning</b>">&lt;label for="rpw_reg">Password&lt;/label>&lt;/dt>
+		&lt;dd class="<b>warning</b>">
+			&lt;input type="password" name="" value="" id="rpw_reg">
+			<b>&lt;p class="txt_warn">Password do not match&lt;/p></b>
+		&lt;/dd>
+	&lt;/dl>
+&lt;/div>&lt;!-- .tbl_form -->
+				</pre>
+				</div>
+				<p>2) Input Checkbox</p>
+				<ul class="_guid_list">
+				<li>기본 체크박스는 input에 클래스 inp_chk_basic 추가합니다.</li>
+				</ul>
+				<input type="checkbox" name="cont_type" value="" class="inp_chk_basic" id="tp_secret"><label for="tp_secret">Checkbox Basic</label>
+				<div style="margin-top:13px;">
+					<input type="checkbox" name="" value="" id="login_keep" class="inp_check_login"><label for="login_keep">Checkbox Login</label>
+				</div>
+				<div class="pre_wrap">
+				<pre>
+&lt;input type="checkbox" name="cont_type" value="" class="<b>inp_chk_basic</b>" id="tp_secret">&lt;label for="tp_secret">Checkbox Basic&lt;/label>
+&lt;input type="checkbox" name="" value="" id="login_keep" class="<b>inp_check_login</b>">&lt;label for="login_keep">Checkbox Login&lt;/label>
+				</pre>
+				</div>
+				<p>3) Input Radio</p>
+				<ul class="_guid_list">
+				<li>기본 라디오는 input에 클래스 inp_radio_basic 추가합니다.</li>
+				<li>체크박스모양의 라디오는 클래스 inp_radio 추가합니다.</li>
+				</ul>
+				<input type="radio" name="radiotest" value="" id="radiotest1" class="inp_radio_basic"><label for="radiotest1">Radio Basic</label>
+				<div style="margin-top:13px;">
+					<input type="radio" name="radiotest" value="" id="radiotest2" class="inp_radio"><label for="radiotest2">Radio check design</label>
+				</div>
+				<div class="pre_wrap">
+				<pre>
+&lt;input type="radio" name="sorting" value="" id="radiod" class="<b>inp_radio_basic</b>">&lt;label for="radiod">Radio Basic&lt;/label>
+&lt;input type="radio" name="sorting" value="" id="sorting_ended" class="<b>inp_radio</b>">&lt;label for="sorting_ended">Radio check design&lt;/label>
+				</pre>
+				</div>
+				<p>3) Select</p>
+				<ul class="_guid_list">
+				<li>select태그는 div.inp_select 안에 작성합니다. </li>
+				<li>select에 width값을 지정해줍니다.</li>
+				<li>ie8 이하에서는 브라우저 기본 select가 쓰입니다.</li>
+				</ul>
+				<div class="inp_select">
+					<select class="" name=""id="" style="width:300px;">
+						<option value="">Select</option>
+						<option value="">Option1</option>
+						<option value="">Option2</option>
+						<option value="">Option3</option>
+					</select>
+				</div><!-- .inp_select -->
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="<b>inp_select</b>">
+	&lt;select class="" name=""id="">
+		&lt;option value="">Select&lt;/option>
+		&lt;option value="">Option1&lt;/option>
+		&lt;option value="">Option2&lt;/option>
+		&lt;option value="">Option3&lt;/option>
+	&lt;/select>
+&lt;/div>&lt;!-- .inp_select -->
+				</pre>
+				</div>
+				<p>4) Sorting Area</p>
+				<!-- sorting component -->
+				<div class="sorting_area">
+					<div class="inp_select">
+						<select class="" name=""id="">
+							<option value="">Years</option>
+							<option value="">2017</option>
+							<option value="">2016</option>
+							<option value="">2015</option>
+						</select>
+					</div><!-- .inp_select -->
+					<!--[D] 개발시 label, id 값 일치시켜주세요. -->
+					<ul>
+						<li>
+							<input type="radio" name="sorting" value="" id="sorting_current" class="inp_radio" checked>
+							<label for="sorting_current">current airing</label>
+						</li>
+						<li>
+							<input type="radio" name="sorting" value="" id="sorting_ended" class="inp_radio">
+							<label for="sorting_ended">ended</label>
+						</li>
+						<li>
+							<input type="radio" name="sorting" value="" id="sorting_screener" class="inp_radio">
+							<label for="sorting_screener">screener</label>
+						</li>
+					</ul>
+				</div>
+				<!-- //sorting component -->
+				<div class="pre_wrap">
+				<pre>
+&lt;!-- sorting component -->
+&lt;div class="<b>sorting_area</b>">
+	&lt;div class="inp_select">
+		&lt;select class="" name=""id="">
+			&lt;option value="">Years&lt;/option>
+			&lt;option value="">2017&lt;/option>
+			&lt;option value="">2016&lt;/option>
+			&lt;option value="">2015&lt;/option>
+		&lt;/select>
+	&lt;/div>&lt;!-- .inp_select -->
+	&lt;!--[D] 개발시 label, id 값 일치시켜주세요. -->
+	&lt;ul>
+		&lt;li>
+			&lt;input type="radio" name="sorting" value="" id="sorting_current" class="inp_radio" checked>
+			&lt;label for="sorting_current">current airing&lt;/label>
+		&lt;/li>
+		&lt;li>
+			&lt;input type="radio" name="sorting" value="" id="sorting_ended" class="inp_radio">
+			&lt;label for="sorting_ended">ended&lt;/label>
+		&lt;/li>
+		&lt;li>
+			&lt;input type="radio" name="sorting" value="" id="sorting_screener" class="inp_radio">
+			&lt;label for="sorting_screener">screener&lt;/label>
+		&lt;/li>
+	&lt;/ul>
+&lt;/div>
+&lt;!-- //sorting component -->
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list10">10. Language Select Area</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>div.tab_area 안에 작성합니다.</li>
+				<li>/js/ux_common.js 에 //lang_select 해당부분 스크립트가 쓰입니다.</li>
+				<li>모바일에서 label에 적용되는 텍스트는 em.pc에 텍스트까지 다 노출되기 때문에 3음절씩 slice되어 노출됩니다.</li>
+				</ul>
+				<div class="tab_area" style="height:50px;">
+					<!-- language section -->
+					<div class="lang_area">
+						<div class="lang_select">
+							<label for="ul-id"><button type="button">English</button></label>
+							<ul role="listbox" id="ul-id">
+								<li role="option" class="active" tabindex="-1"><button type="button" name="button"><em class="pc">Eng</em><span class="mo">English</span></button></li>
+								<li role="option" tabindex="-1"><button type="button" name="button"><span class="pc">Jpn</span><em class="mo">日本語</em></button></li>
+								<li role="option" tabindex="-1"><button type="button" name="button"><em class="pc">Chn</em><em class="mo">中文</em></button></li>
+								<!--<li role="option" tabindex="-1"><button type="button" name="button"><em class="pc">Esp</em><em class="mo">Espanol</em></button></li>-->
+							</ul>
+						</div><!-- .lang_select -->
+					</div><!-- .lang_area -->
+					<!-- //language section -->
+				</div>
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="tab_area">
+...
+&lt;!-- language section -->
+&lt;div class="<b>lang_area</b>">
+	&lt;div class="lang_select">
+		&lt;label for="ul-id">&lt;button type="button">English&lt;/button>&lt;/label>
+		&lt;ul role="listbox" id="ul-id">
+			&lt;li role="option" class="active" tabindex="-1">&lt;button type="button" name="button">&lt;em class="pc">Eng&lt;/em>&lt;span class="mo">English&lt;/span>&lt;/button>&lt;/li>
+			&lt;li role="option" tabindex="-1">&lt;button type="button" name="button">&lt;span class="pc">Jpn&lt;/span>&lt;em class="mo">日本語&lt;/em>&lt;/button>&lt;/li>
+			&lt;li role="option" tabindex="-1">&lt;button type="button" name="button">&lt;em class="pc">Chn&lt;/em>&lt;em class="mo">中文&lt;/em>&lt;/button>&lt;/li>
+			&lt;!--&lt;li role="option" tabindex="-1">&lt;button type="button" name="button">&lt;em class="pc">Esp&lt;/em>&lt;em class="mo">Espanol&lt;/em>&lt;/button>&lt;/li>-->
+		&lt;/ul>
+	&lt;/div>&lt;!-- .lang_select -->
+&lt;/div>&lt;!-- .lang_area -->
+&lt;!-- //language section -->
+...
+&lt;/div>
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list11">11. Form Table ( .tbl_form .tbl_board )</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>테이블 모양의 반응형 폼영역은 div.tbl_form, div.tbl_board 두가지 종류가 있습니다. (div > dl > dt, dd 형식)</li>
+				<li>div.tbl_form 은 input, select, textarea 등 입력값이 들어가는 테이블형식의 리스트에 적용되며</li>
+				<li>div.tbl_board 는  게시판에서 쓰이는 테이블형식의 리스트에 적용됩니다.</li>
+				<li>div.tbl_form 다음에 오는 버튼은 div.form_btn_area 로 감싸서</li>
+				<li>div.tbl_board 다음에 오는 버튼은 div.board_btn_area 로 감싸서 작업합니다.</li>
+				<li>기본 공통값으로 tbl_form, tbl_board가 적용되며</li>
+				</ul>
+				<p>1) div.tbl_form  - myinfo, request, register, QnA write 등</p>
+				<div class="cont_wrap request_wrap" style="margin-top:20px;margin-bottom:-100px;">
+					<div class="tbl_form">
+	                	<!--[D] 개발시 label, id 값 일치시켜주세요. -->
+						<dl>
+							<dt class="tit first_line"><label for="biz_bd">Business Territory</label></dt>
+							<dd class="col2 first_line">
+								<!--[D] login시 name 자동출력 -->
+								<div class="inp_select">
+									<select class="" name=""id="biz_bd">
+										<option value="">Select Territory</option>
+										<option value="">Asia</option>
+										<option value="">North America</option>
+										<option value="">Europe</option>
+									</select>
+								</div><!-- .inp_select -->
+							</dd>
+							<dt class="tit first_line"><label for="email_bd">E-mail Adderss</label></dt>
+							<dd class="col2 col4 first_line"><input type="email" name="" value="" id="email_bd"></dd>
+							<dt class="tit"><label for="name_bd">Your / Company Name</label></dt>
+							<dd class="col2">
+								<div class="input_area">
+									<input type="text" name="" value="" id="name_bd" placeholder="Your Name">
+									<input type="text" name="" value="" placeholder="Company Name">
+								</div><!-- .input_area -->
+							</dd>
+							<dt class="tit"><label for="tel_bd">Telephone Number</label></dt>
+							<dd class="col2 col4"><input type="tel" name="" value="" id="tel_bd"></dd>
+							<dt class="tit"><label for="tit_bd">Title</label></dt>
+							<dd><input type="text" name="" value="" id="tit_bd" class="inp_full"></dd>
+							<dt class="tit"><label for="que_bd">Question</label></dt>
+							<dd class="h_auto"><textarea name="name" rows="8" cols="80" id="que_bd"></textarea></dd>
+						</dl>
+					</div><!-- .tbl_form -->
+					<div class="form_btn_area">
+						<p class="notice">Any postings that violate the rights of others, such as copyrights or libel, <br> can be imposed by the relevant law and can be deleted according to the principle of gesipin operating principles.</p>
+						<a href="#" class="btn btn_md_type1">CANCEL</a>
+						<a href="#" class="btn btn_md_type2">OK</a>
+					</div><!-- .form_btn_area -->
+				</div><!-- .cont_wrap write_wrap -->
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="cont_wrap request_wrap">
+	&lt;div class="<b>tbl_form</b>">
+		&lt;dl>
+			&lt;dt class="tit first_line">&lt;label for="biz_bd">Business Territory&lt;/label>&lt;/dt>
+			&lt;dd class="col2 first_line">
+				&lt;!--[D] login시 name 자동출력 -->
+				&lt;div class="inp_select">
+					&lt;select class="" name=""id="biz_bd">
+						&lt;option value="">Select Territory&lt;/option>
+					&lt;/select>
+				&lt;/div>&lt;!-- .inp_select -->
+			&lt;/dd>
+			&lt;dt class="tit first_line">&lt;label for="email_bd">E-mail Adderss&lt;/label>&lt;/dt>
+			&lt;dd class="col2 col4 first_line">&lt;input type="email" name="" value="" id="email_bd">&lt;/dd>
+			&lt;dt class="tit">&lt;label for="name_bd">Your / Company Name&lt;/label>&lt;/dt>
+			&lt;dd class="col2">
+				&lt;div class="input_area">
+					&lt;input type="text" name="" value="" id="name_bd" placeholder="Your Name">
+					&lt;input type="text" name="" value="" placeholder="Company Name">
+				&lt;/div>&lt;!-- .input_area -->
+			&lt;/dd>
+			&lt;dt class="tit">&lt;label for="tel_bd">Telephone Number&lt;/label>&lt;/dt>
+			&lt;dd class="col2 col4">&lt;input type="tel" name="" value="" id="tel_bd">&lt;/dd>
+			&lt;dt class="tit">&lt;label for="tit_bd">Title&lt;/label>&lt;/dt>
+			&lt;dd>&lt;input type="text" name="" value="" id="tit_bd" class="inp_full">&lt;/dd>
+			&lt;dt class="tit">&lt;label for="que_bd">Question&lt;/label>&lt;/dt>
+			&lt;dd class="h_auto">&lt;textarea name="name" rows="8" cols="80" id="que_bd">&lt;/textarea>&lt;/dd>
+		&lt;/dl>
+	&lt;/div>&lt;!-- .tbl_form -->
+	&lt;div class="<b>form_btn_area</b>">
+		&lt;p class="notice">Any postings that violate the rights of others, such as copyrights or libel, ... principles.&lt;/p>
+		&lt;a href="#" class="btn btn_md_type1">CANCEL&lt;/a>
+		&lt;a href="#" class="btn btn_md_type2">OK&lt;/a>
+	&lt;/div>&lt;!-- .form_btn_area -->
+&lt;/div>&lt;!-- .cont_wrap write_wrap -->
+
+				</pre>
+				</div>
+				<p>2) div.tbl_board - QnA리스트, content market 리스트 등</p>
+				<div class="cont_wrap qna_list_wrap" style="margin-top:-20px;margin-bottom:40px;">
+					<div class="tbl_board">
+						<div class="lst_head">
+							<span class="tit bd_num">NO.</span>
+							<span class="tit bd_title">TITLE</span>
+							<div class="tit bd_other">
+								<span class="tit bd_writer">NAME</span>
+								<span class="tit bd_date">DATE</span>
+								<span class="tit bd_hits">COUNT</span>
+							</div>
+						</div><!-- .lst_head -->
+						<!-- [D]
+						basic :  <a href="#">title</a>
+						reply :  <a href="#"><span class="reply"><em class="sp_ico ico_reply"></em>[Re]</span>title</a>
+						secret : <a href="#" class="secret">title<em class="sp_ico ico_lock">secret</em></a>
+						replay + secret : <a href="#" class="secret"><span class="reply"><em class="sp_ico ico_reply"></em>[Re]</span>title<em class="sp_ico ico_lock">secret</em></a>
+						-->
+						<!-- [D] notice -->
+						<div class="lst_body">
+							<p class="info num noti">Notice</p>
+							<p class="info title"><a href="#">JTBC Global world wide open ^^</a></p>
+							<div class="info other">
+								<span class="writer">Administrator</span>
+								<span class="date">14 / 02 / 2017</span>
+								<span class="hits">9999</span>
+							</div>
+						</div><!-- .lst_body -->
+						<!-- //[D] notice -->
+						<div class="lst_body">
+							<p class="info num">3059</p>
+							<p class="info title"><a href="#">JTBC Global world wide open ^^</a></p>
+							<div class="info other">
+								<span class="writer">Administrator</span>
+								<span class="date">14 / 02 / 2017</span>
+								<span class="hits">9999</span>
+							</div>
+						</div><!-- .lst_body -->
+						<!-- [D] Reply -->
+						<div class="lst_body">
+							<p class="info num">3059</p>
+							<p class="info title"><a href="#"><span class="reply"><em class="sp_ico ico_reply"></em>[Re]</span>JTBC Global world wide open title~~JTBC Global world wide open title~~JTBC Global world wide open title~~JTBC Global world wide open title~~</a></p>
+							<div class="info other">
+								<span class="writer">Administrator</span>
+								<span class="date">14 / 02 / 2017</span>
+								<span class="hits">9999</span>
+							</div>
+						</div><!-- .lst_body -->
+						<!-- //[D] Reply -->
+						<!-- [D] Secret -->
+						<div class="lst_body">
+							<p class="info num">3059</p>
+							<p class="info title"><a href="#" class="secret">JTBC Global worldJTBC Global worldJTBC Global worldJTBC Global worldJTBC Global worldJTBC Global worldJTBC Global world<em class="sp_ico ico_lock">secret</em></a></p>
+							<div class="info other">
+								<span class="writer">Administrator</span>
+								<span class="date">14 / 02 / 2017</span>
+								<span class="hits">9999</span>
+							</div>
+						</div><!-- .lst_body -->
+						<!-- //[D] Secret -->
+						<!-- [D] Reply & Secret -->
+						<div class="lst_body">
+							<p class="info num">3059</p>
+							<p class="info title"><a href="#" class="secret"><span class="reply"><em class="sp_ico ico_reply"></em>[Re]</span>JTBC Global world wide open title~~JTBC Global world wide open title~~JTBC Global world wide open title~~JTBC Global world wide open title~~<em class="sp_ico ico_lock">secret</em></a></p>
+							<div class="info other">
+								<span class="writer">Administrator</span>
+								<span class="date">14 / 02 / 2017</span>
+								<span class="hits">9999</span>
+							</div>
+						</div><!-- .lst_body -->
+						<!-- //[D] Reply & Secret -->
+					</div><!-- .tbl_board -->
+					<div class="board_btn_area">
+						<a href="#" class="btn btn_md_type4">WRITE</a>
+					</div><!-- .board_btn_area -->
+				</div>
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="cont_wrap qna_list_wrap">
+	&lt;div class="<b>tbl_board</b>">
+		&lt;div class="lst_head">
+			&lt;span class="tit bd_num">NO.&lt;/span>
+			&lt;span class="tit bd_title">TITLE&lt;/span>
+			&lt;div class="tit bd_other">
+				&lt;span class="tit bd_writer">NAME&lt;/span>
+				&lt;span class="tit bd_date">DATE&lt;/span>
+				&lt;span class="tit bd_hits">COUNT&lt;/span>
+			&lt;/div>
+		&lt;/div>&lt;!-- .lst_head -->
+<b>&lt;!-- [D]  형식
+기본  :  &lt;a href="#">title&lt;/a>
+답글  :  &lt;a href="#">&lt;span class="reply">&lt;em class="sp_ico ico_reply">&lt;/em>[Re]&lt;/span>title&lt;/a>
+비밀글 : &lt;a href="#" class="secret">title&lt;em class="sp_ico ico_lock">secret&lt;/em>&lt;/a>
+답글 + 비밀글 : &lt;a href="#" class="secret">&lt;span class="reply">&lt;em class="sp_ico ico_reply">&lt;/em>[Re]&lt;/span>title&lt;em class="sp_ico ico_lock">secret&lt;/em>&lt;/a>
+--></b>
+		&lt;!-- [D] notice -->
+		&lt;div class="lst_body">
+			&lt;p class="info num <b>noti</b>">Notice&lt;/p>
+			&lt;p class="info title">&lt;a href="#">JTBC Global world wide open ^^&lt;/a>&lt;/p>
+			&lt;div class="info other">
+				&lt;span class="writer">Administrator&lt;/span>
+				&lt;span class="date">14 / 02 / 2017&lt;/span>
+				&lt;span class="hits">9999&lt;/span>
+			&lt;/div>
+		&lt;/div>&lt;!-- .lst_body -->
+		&lt;!-- //[D] notice -->
+		&lt;div class="lst_body">
+			&lt;p class="info num">3059&lt;/p>
+			&lt;p class="info title">&lt;a href="#">JTBC Global world wide open ^^&lt;/a>&lt;/p>
+			&lt;div class="info other">
+				&lt;span class="writer">Administrator&lt;/span>
+				&lt;span class="date">14 / 02 / 2017&lt;/span>
+				&lt;span class="hits">9999&lt;/span>
+			&lt;/div>
+		&lt;/div>&lt;!-- .lst_body -->
+		&lt;!-- [D] Reply & Secret -->
+		&lt;div class="lst_body">
+			&lt;p class="info num">3059&lt;/p>
+			&lt;p class="info title">&lt;a href="#" class="secret">&lt;span class="reply">&lt;em class="sp_ico ico_reply">&lt;/em>[Re]&lt;/span>JTBC Global world wide open ^^&lt;em class="sp_ico ico_lock">secret&lt;/em>&lt;/a>&lt;/p>
+			&lt;div class="info other">
+				&lt;span class="writer">Administrator&lt;/span>
+				&lt;span class="date">14 / 02 / 2017&lt;/span>
+				&lt;span class="hits">9999&lt;/span>
+			&lt;/div>
+		&lt;/div>&lt;!-- .lst_body -->
+		&lt;!-- //[D] Reply & Secret -->
+	&lt;/div>&lt;!-- .tbl_board -->
+	&lt;div class="<b>board_btn_area</b>">
+		&lt;a href="#" class="btn btn_md_type4">WRITE&lt;/a>
+	&lt;/div>&lt;!-- .board_btn_area -->
+&lt;/div>
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list12">12. Flex Box</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>.flex_wrap{ table-layout:fixed; display:table; width:100%;}<br>
+					.flex_box{ float:left; display:table-cell; width:50%; } <span class="comment">// float은 요소를 강제로 display:block화 시키기 때문에 float 다음에 display:table-cell을 적용합니다.</span></li>
+				</ul>
+				<div class="flex_wrap">
+					<div class="flex_box">
+						<div class="inner">
+							<div class="profile_pic">
+								<span class="mask"></span>
+								<!-- [D] 프로필사진은 background image로 입력됩니다. -->
+								<span class="pic"></span>
+							</div><!-- .profile_pic -->
+							<div class="profile_info">
+								<span class="name">GilDong Hong</span>
+								<span class="part">Team Manager, Japan Dept</span>
+								<span class="tel"><em class="sp_ico ico_tel">tel</em>+82-2-751-1234</span>
+								<span class="mobile"><em class="sp_ico ico_mobile">mobile</em>+82-10-1234-5678</span>
+								<span class="email"><em class="sp_ico ico_email">email</em><a href="mailto:gildong@jtbc.co.kr">gildong@jtbc.co.kr</a></span>
+							</div><!-- .profile_info -->
+						</div><!-- .inner -->
+					</div><!-- .flex_box -->
+					<div class="flex_box">
+						<div class="inner">
+							<div class="profile_pic">
+								<span class="mask"></span>
+								<!-- [D] 프로필사진은 background image로 입력됩니다. -->
+								<span class="pic"></span>
+							</div><!-- .profile_pic -->
+							<div class="profile_info">
+								<span class="name">GilDong Hong</span>
+								<span class="part">Team Manager, Japan Dept</span>
+								<span class="tel"><em class="sp_ico ico_tel">tel</em>+82-2-751-1234</span>
+								<span class="mobile"><em class="sp_ico ico_mobile">mobile</em>+82-10-1234-5678</span>
+								<span class="email"><em class="sp_ico ico_email">email</em><a href="mailto:gildong@jtbc.co.kr">gildong@jtbc.co.kr</a></span>
+							</div><!-- .profile_info -->
+						</div><!-- .inner -->
+					</div><!-- .flex_box -->
+				</div>
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="<b>flex_wrap</b>">
+	&lt;div class="<b>flex_box</b>">
+		&lt;div class="inner">
+			&lt;div class="profile_pic">
+				&lt;span class="mask">&lt;/span>
+				&lt;!-- [D] 프로필사진은 background image로 입력됩니다. -->
+				&lt;span class="pic">&lt;/span>
+			&lt;/div>&lt;!-- .profile_pic -->
+			&lt;div class="profile_info">
+				&lt;span class="name">GilDong Hong&lt;/span>
+				&lt;span class="part">Team Manager, Japan Dept&lt;/span>
+				&lt;span class="tel">&lt;em class="sp_ico ico_tel">tel&lt;/em>+82-2-751-1234&lt;/span>
+				&lt;span class="mobile">&lt;em class="sp_ico ico_mobile">mobile&lt;/em>+82-10-1234-5678&lt;/span>
+				&lt;span class="email">&lt;em class="sp_ico ico_email">email&lt;/em>&lt;a href="mailto:gildong@jtbc.co.kr">gildong@jtbc.co.kr&lt;/a>&lt;/span>
+			&lt;/div>&lt;!-- .profile_info -->
+		&lt;/div>&lt;!-- .inner -->
+	&lt;/div>&lt;!-- .flex_box -->
+&lt;/div>
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list13">13. Ellipsis</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>한줄 말줄임 : .text-ellipsis();</li>
+				<li>두줄 말줄임 : .text-ellipsis-2line();</li>
+				<li>말줄임 취소 : .text-no-ellipsis();</li>
+				</ul>
+				<div class="pre_wrap">
+				<pre>
+.text-ellipsis(){
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.text-ellipsis-2line(){
+	<span class="comment">//ie, firefox는  display:inline-block;으로 나타납니다. 작성시 최대 높이(max-height)를 입력해주세요. (개발에서의 말줄임필요)</span>
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:normal;
+	word-wrap:break-word;
+	display:inline-block;//순서 주의 ie, firefox
+	*display:inline;
+	*zoom:1;
+	display:-webkit-box;//순서 주의 chrome, safari, opera
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+}
+.text-no-ellipsis(){
+	overflow:hidden;
+	white-space:initial;
+	text-overflow:ellipsis;
+}
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list14">14. LayerPopup</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>.layer_pop 클래스 공통으로 사용합니다.</li>
+				<li>.pop_inner , .pop_tit, .pop_txt, .btn_close 공통사용</li>
+				<li>**Find 버튼(이미지 업로드 버튼)은 하위브라우저ie8, ie7에서는 브라우저 자체 버튼으로 쓰입니다. (컴퓨터환경에 따라 언어환경 변화)</li>
+				</ul>
+				<div class="dimmed" style="display:block;position:relative;width:100%;height:500px;">
+					<!-- [D] 파일업로드 레이어팝업 -->
+					<div class="layer_pop pop_upload" style="display:block;position:absolute;left:50%;top:50%;margin-top:-190px;margin-left:-350px;">
+						<div class="pop_inner">
+							<p class="pop_tit">File Uploader</p>
+							<p class="pop_txt">Any postings that violate the rights of others, such as copyrights or libel, can be imposed by the relevant law and can be deleted according to the principle of gesipin operating principles.</p>
+							<div class="upload_area">
+								File Attach
+								<input type="text" name="" value="" readonly>
+								<span class="inp_upload"><input type="file" name="" id="inp_upload"><label for="inp_upload">Find</label></span>
+								<p class="txt_warn"><span class="sp_ico ico_warning"></span>Up to 20MB can be attached.</p>
+								<div class="btn_area">
+									<a href="#" class="btn btn_pop_type1">Cancel</a>
+									<a href="#" class="btn btn_pop_type2">OK</a>
+								</div><!-- .btn_area -->
+							</div><!-- .upload_area -->
+							<a href="#" class="btn_close"><span class="sp_ico ico_close">close popup</span></a>
+						</div><!-- .pop_inner -->
+					</div><!-- .layer_pop pop_upload -->
+					<!-- //[D] 파일업로드 레이어팝업 -->
+				</div>
+				<div class="pre_wrap">
+				<pre>
+&lt;!-- [D] 파일업로드 레이어팝업 -->
+&lt;div class="<b>layer_pop</b> pop_upload">
+	&lt;div class="<b>pop_inner</b>">
+		&lt;p class="<b>pop_tit</b>">File Uploader&lt;/p>
+		&lt;p class="<b>pop_txt</b>">Any postings that violate the rights of others, such as copyrights or libel, can be imposed by the relevant law and can be deleted according to the principle of gesipin operating principles.&lt;/p>
+		&lt;div class="upload_area">
+			File Attach
+			&lt;input type="text" name="" value="" readonly>
+			&lt;span class="inp_upload">&lt;input type="file" name="" id="inp_upload">&lt;label for="inp_upload">Find&lt;/label>&lt;/span>
+			&lt;p class="txt_warn">&lt;span class="sp_ico ico_warning">&lt;/span>Up to 20MB can be attached.&lt;/p>
+			&lt;div class="btn_area">
+				&lt;a href="#" class="btn btn_pop_type1">Cancel&lt;/a>
+				&lt;a href="#" class="btn btn_pop_type2">OK&lt;/a>
+			&lt;/div>&lt;!-- .btn_area -->
+		&lt;/div>&lt;!-- .upload_area -->
+		&lt;a href="#" class="<b>btn_close</b>">&lt;span class="sp_ico ico_close">close popup&lt;/span>&lt;/a>
+	&lt;/div>&lt;!-- .pop_inner -->
+&lt;/div>&lt;!-- .layer_pop pop_upload -->
+&lt;!-- //[D] 파일업로드 레이어팝업 -->
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list15">15. 주요 공통 클래스</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>.bg_colored : html background-color 적용클래스(기본레이아웃, register레이아웃)</li>
+				<li>.mo : 모바일에서만 display:block; 되는 공통클래스입니다.</li>
+				<li>.pc : PC에서만 display:block; 되는 공통클래스입니다.</li>
+				<li>.blind : 숨김 처리할때 사용하는 공통클래스입니다.</li>
+				<li>.full_bg_wrap : width:100% 값을 갖는 공통클래스입니다.</li>
+				<li>.no_data : 데이터 없는 페이지 공통클래스입니다.</li>
+				</ul>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list16">16. Gulp Sprite Smith 활용</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>설치 : npm install -dev gulp.spritesmith</li>
+				<li>gulpfile.js에서 스프라이트 조각이미지 폴더(sp), 각각의 스프라이트 이미지를 한장으로 자동생성해주는 이미지(sprite.png), 자동생성되는 less 스타일파일(sprite.less) 옵션값을 지정해줍니다.</li>
+				<li>명령어 : gulp sprite (모든 명령어는 gulpfile.js에서 사용자가 수정가능)</li>
+				<li>less mixin, 함수를 이용하여 운영이 용이하게 사용합니다.</li>
+				<li>협업시 sprite.png, sprite.less 작업시 충돌나게되면 gitignore에 추가하여 한사람만 sprite.png, sprite.less를 관리하면 충돌문제를 해결할 수 있습니다..</li>
+				</ul>
+				<div class="pre_wrap">
+				<pre>
+sprite.png  / sprite.less 스타일 이용하기
+
+1. sprite.less에서 width/height/background-position/background-size  값을 다 생성해주기때문에, 스타일에서 함수로 활용하면됩니다.
+만약,
+ images/sp/폴더에 저장한 스프라이트 이미지, <b>logo_jtbc.png</b> 를 불러올떄,
+ 입력값)
+ .logo_jtbc{
+ 	.sprite(<b>@logo-jtbc</b>);
+ }
+
+ images/sp/폴더에 저장한 sprite 레티나 이미지, logo_jtbc_x2.png 를 불러올떄,
+입력값)
+ @media all and (max-width:1024px){
+ 	.logo_jtbc{
+ 		.<b>sprite-retina</b>(@logo-jtbc-x2);
+ 	}
+ }
+
+
+2. &:after, &:before 로 쓰는 스프라이트 이미지 스타일 설정하기
+1)백그라운드 함수를 만듭니다.
+ 입력값)
+	<b>.bg_ico_arrow_r()</b>{
+		.sprite(@ico-arrow-r);
+	}
+2)함수를 이용하여 스타일을 입력합니다.
+ 입력값)
+	&:after{
+		content:'';
+		display:block;
+		position:absolute;
+		left:8px;
+		top:50%;
+		margin-top:-3px;
+		<b>.bg_ico_arrow_r();</b>
+	}
+3)retina 이미지를 써야할떄, 똑같이 함수를 만듭니다.
+   <b>주의할점은 함수값은 css로 컴파일 되지 않고 말그대로 변수같이 쓰이기 때문에 레티나 이미지라도 함수값은 미디어쿼리에 넣지 않습니다.</b>
+   입력값)
+   <b>.ico_select_retina()</b>{
+	   <b>.sprite-retina</b>(@ico-select-x2);
+   }
+4)함수를 이용하여 스타일을 입력합니다.
+ 입력값)
+	&:after{
+		right:5px;
+		top:50%;
+		margin-top:-3px;
+		<b>.ico_select_retina();</b>
+	}
+
+3. spritesmith를 이용한 Retina images 함수 만들기 ( _mixin.less )
+.sprite-retina-width(@sprite) {
+	width: (extract(@sprite, 5)<b>/2</b>); <span class="comment">// width값/2</span>
+}
+.sprite-retina-height(@sprite) {
+	height: (extract(@sprite, 6)<b>/2</b>); <span class="comment">// height값/2</span>
+}
+.sprite-retina-position(@sprite) {
+	  @sprite-retina-offset-x: (extract(@sprite, 3)<b>/2</b>);
+	  @sprite-retina-offset-y: (extract(@sprite, 4)<b>/2</b>);
+	  background-position: @sprite-retina-offset-x @sprite-retina-offset-y; <span class="comment">// background-position x,y값/2</span>
+}
+.sprite-retina-background-size(@sprite){
+	@sprite-retina-size-width:(@spritesheet-width<b>/2</b>);
+	@sprite-retina-size-height:(@spritesheet-height<b>/2</b>);
+	background-size: @sprite-retina-size-width @sprite-retina-size-height; <span class="comment">// background-size x,y값/2</span>
+}
+<b>.sprite-retina</b>(@sprite) {
+	.sprite-image(@sprite); <span class="comment">// sprite.png  이미지 불러오기,</span>
+	.sprite-retina-position(@sprite); <span class="comment">// background-position 값 불러오기</span>
+	.sprite-retina-width(@sprite); <span class="comment">//  width값 불러오기</span>
+	.sprite-retina-height(@sprite); <span class="comment">// height값 불러오기</span>
+	.sprite-retina-background-size(@sprite); <span class="comment">// background-size값 불러오기</span>
+}
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list -->
+			<h4 class="_guide_tit" id="list17">17. SwiperJS</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li>JS : /js/swiper.min.js </li>
+				<li>ie7,8,9 하위버전 브라우저 대응 JS : swiper.jquery.min.js</li>
+				<li>Less : swiper.less</li>
+				<li>.swiper-button-next, .swiper-button-prev 이미지는 메인과 서브페이지 디자인이 다르기 때문에 상속해서 적용.</li>
+				</ul>
+				<p>1)서브페이지 스와이퍼 영역</p>
+				<div class="basic_info_wrap" style="width:347px;height:495px;position:relative;margin:10px auto;">
+					<div class="box_poster">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="/images/@tmp_poster1.jpg" alt=""></div>
+								<div class="swiper-slide"><img src="/images/@tmp_poster1.jpg" alt=""></div>
+								<div class="swiper-slide"><img src="/images/@tmp_poster1.jpg" alt=""></div>
+								<div class="swiper-slide"><img src="/images/@tmp_poster1.jpg" alt=""></div>
+							</div><!-- .swiper-wrapper -->
+							<!-- Add Arrows -->
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+						</div><!-- .swiper-container -->
+					</div>
+				</div>
+			    <script type="text/javascript">
+			    var swiper = new Swiper('.swiper-container', {
+			        loop: true,
+			        paginationClickable: true,
+			        nextButton: '.swiper-button-next',
+			        prevButton: '.swiper-button-prev'
+			    });
+			    </script>
+				<div class="pre_wrap">
+				<pre>
+&lt;div class="<b>swiper-container</b>">
+	&lt;div class="<b>swiper-wrapper</b>">
+		&lt;div class="<b>swiper-slide</b>">&lt;img src="/images/@tmp_poster1.jpg" alt="">&lt;/div>
+		&lt;div class="swiper-slide">&lt;img src="/images/@tmp_poster1.jpg" alt="">&lt;/div>
+		&lt;div class="swiper-slide">&lt;img src="/images/@tmp_poster1.jpg" alt="">&lt;/div>
+		&lt;div class="swiper-slide">&lt;img src="/images/@tmp_poster1.jpg" alt="">&lt;/div>
+	&lt;/div>&lt;!-- .swiper-wrapper -->
+	&lt;!-- Add Arrows -->
+	&lt;div class="<b>swiper-button-next</b>">&lt;/div>
+	&lt;div class="<b>swiper-button-prev</b>">&lt;/div>
+&lt;/div>&lt;!-- .swiper-container -->
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+			<!-- list --
+			<h4 class="_guide_tit" id="list18">18. ETC</h4>
+			<div class="_guide_cont">
+				<ul class="_guid_list">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				</ul>
+				<p>1) 탭 4개일때 </p>
+				<div class="pre_wrap">
+				<pre>
+				</pre>
+				</div>
+			</div>
+			<!-- //list -->
+		</div>
+		<!-- //contents -->
+		<!-- footer -->
+		<div id="footer"></div>
+		<!-- //footer -->
+		<div class="dimmed"></div>
+	</div>
+</body>
+</html>

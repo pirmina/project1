@@ -1,0 +1,308 @@
+//ie7-8 browser
+.ie7,
+.ie8{
+	input[type="radio"],
+	input[type="checkbox"]{
+		position:static;
+		left:auto;
+	}
+	.inp_radio + label,
+	.inp_check_login + label{
+		padding-left:0;
+		&:before{
+			left:-9999px;
+		}
+	}
+	select{
+		padding-right:8px;
+	}
+	.inp_select:after{
+		content:none;
+	}
+	#gnb .gnb_wrap li a{
+		margin:0 35px;
+	}
+	.board_btn_area{
+		.btn.btn_md_type4{
+			float:right;
+		}
+	}
+	.write_wrap{
+		.input_chk_area{
+			input[type=checkbox]{
+				width:auto;
+			}
+		}
+		.inp_chk_basic + label{
+			padding-left:0;
+			margin-left:0;
+			&:before{
+				content:none;
+			}
+		}
+	}
+	.layer_pop{
+		.upload_area{
+			position:relative;
+			.inp_upload{
+				input[type=file]{
+					position:absolute;
+					right:2px;
+					top:0;
+					.size(90px;44px;);
+					clip:auto;
+					font-size:14px;
+				}
+				label{
+					display:none;
+				}
+			}
+		}
+	}
+}
+//ie8 browser
+.ie8{
+	//flex
+	.flex_wrap{
+		border-left:0;
+		.flex_box{
+			width:621px;
+		}
+	}
+	.tabarea{
+		border-bottom:1px solid red;
+	}
+}
+//ie7 browser
+.ie7{
+	select{appearance:inherit;height:25px;margin:6px 0;}
+	#header{
+		.head{
+			position:relative;
+			z-index:100;
+		}
+		.h1 a,
+		.util_area{
+			z-index:1;
+			li{width:49.5%;}
+			.util_btn{padding:5px 0;height:auto;}
+		}
+	}
+	.pop_login.layer_pop{
+		z-index:999;
+		.bg_top{
+			position:absolute;
+			left:50%;
+			top:-16px;
+			display:block;
+			.size(29px;16px;);
+			background:url(/images/ie7_bg_img_loginly.png);
+		}
+		.input_area{
+			input{
+				background-color:transparent;
+			}
+			.login_email{
+				background:url(/images/ie7_ico_email.png) no-repeat 17px 50%;
+			}
+			.login_pw{
+				background:url(/images/ie7_ico_password.png) no-repeat 19px 50%;
+			}
+		}
+	}
+	#gnb{
+		height:50px;
+	}
+	#contents{
+		clear:both;
+		.flex_wrap{
+			overflow:hidden;
+			.flex_box{
+				float:left;
+				width:618px;
+				margin-top:-1px;
+				border:1px solid #e8e8e8;
+				border-left:0;
+			}
+		}
+		.heading{
+			overflow:hidden;
+			position:relative;
+			.size(1245px;50px;);
+			.tit_h3,
+			.tit_h4{
+				float:none;
+				width:100%;
+			}
+			.navigation{
+				position:absolute;
+				right:0;
+				bottom:19px;
+				overflow:hidden;
+				li{
+					background:url(/images/ie7_ico_arrow_r.png) no-repeat 7px 50%;
+				}
+			}
+		}
+		.sorting_area{
+			position:relative;
+			height:50px;
+			.inp_select{
+				float:left;
+				select{
+					margin:0;
+				}
+			}
+			ul{
+				position:relative;
+				overflow:hidden;
+				height:50px;
+				float:left;
+				margin-left:50px;
+			}
+			li{
+				position:relative;
+				float:left;
+			}
+		}
+	}
+	.tab_area{
+		background:url(/images/ie7_bg_tab.png) repeat-x left bottom;
+		.tab{
+			li.on{
+				background:url(/images/ie7_bg_tab.png) repeat-y left top;
+			}
+		}
+	}
+	.box_program{
+		.pr_thumb,
+		.pr_detail_area{
+			float:left;
+		}
+		.pr_detail_area{
+			padding-top:38px;
+		}
+	}
+	.box_material{
+		.thumb,
+		.title{
+			float:left;
+		}
+		.title{
+			padding-top:10px;
+		}
+		.flex_box{
+			height:152px;
+		}
+	}
+	.pr_detail{
+		li{
+			background:url(/images/ie7_bul_square.png) no-repeat left 50%;
+		}
+	}
+	.basic_info_wrap{
+		.box_info{
+			.tit{
+				padding-left:15px;
+				background:url(/images/ie7_bul_square.png) no-repeat left 50%;
+			}
+			.txt_detail{
+				width:1050px;
+				background:url(/images/ie7_bul_vline.png) no-repeat left 50%;
+			}
+		}
+		.box_poster{
+			.size(347px;495px;);
+		}
+	}
+	.box_business{
+		.flex_box{
+			height:211px;
+		}
+		&.other{
+			float:left;
+			width:618px;
+			.flex_wrap{
+				border-left:1px solid @color_border;
+			}
+			.flex_box{
+				width:605px;
+			}
+			.profile_info{
+				width:375px;
+			}
+		}
+	}
+	.profile_info{
+		width:385px;
+	}
+	.register_wrap{
+		.tbl_form{
+			border-top:0;
+		}
+		input,textarea{
+			width:260px;
+		}
+		.input_area input{
+			width:111px;
+		}
+	}
+	#contents.contents_register{
+		width:500px;
+		.heading{
+			float:left;
+			width:500px;
+			.tit_h3{
+				width:216px;
+			}
+		}
+		.txt_head{
+			background:url(/images/ie7_bul_vline.png) no-repeat left bottom;
+		}
+	}
+	td.tit,
+	.view_other{
+		.reply{
+			text-align:right;
+		}
+	}
+	.tbl_board{
+		.lst_body{
+			overflow:hidden;
+		}
+	}
+	.qna_view_wrap{
+		.view_cont img{
+			display:inline;
+			zoom:1;
+		}
+		.view_other .view_prev,
+		.view_other .view_next{
+			overflow:hidden;
+			height:56px;
+		}
+	}
+	.write_wrap{
+		dd{
+			background-color:@white;
+		}
+		.attached_box{
+			overflow-y:scroll;
+			position:relative;
+		}
+	}
+	.contents_market_wrap{
+		.lst_body{
+			.info.market{
+				padding-top:20px;
+			}
+			.attendee{
+				padding-top:10px;
+				li{
+					line-height:15px;
+				}
+			}
+		}
+	}
+
+}

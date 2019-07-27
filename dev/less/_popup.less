@@ -1,0 +1,385 @@
+// layer_popup
+.layer_pop{
+	display:none;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-350px;
+	width:700px;
+	min-width:298px;
+	z-index:100;
+	.btn_area{
+		width:211px;
+		margin:20px auto 0;
+	}
+	.btn{
+		width:100px;
+		padding:10px 0;
+		font-size:14px;
+		&.btn_pop_type1{
+			//height 38px button
+			position:relative;
+			border:1px solid #d7d8da;
+			color:#595959;
+			background-color:rgba(255,255,255,.6);
+		}
+		&.btn_pop_type2{
+			//height 38px button, bg black
+			color:@white;
+			border:1px solid #797d84;
+			background-color:#797d84;
+		}
+	}
+	.pop_inner{
+		position:relative;
+		padding:40px;
+		border:1px solid #eaeaea;
+		background-color:@white;
+	}
+	.pop_tit{
+		padding-bottom:15px;
+		border-bottom:2px solid #555;
+		font-size:23px;
+		line-height:23px;
+		font-weight:500;
+	}
+	.pop_txt{
+		padding:35px 0;
+		font-size:18px;
+		line-height:20px;
+		letter-spacing:1px;
+		font-weight:500;
+	}
+	.btn_close{
+		position:absolute;
+		right:33px;
+		top:33px;
+		padding:8px;
+	}
+	input[type=text],
+	input[type=password]{
+		padding:12px 12px;
+		margin:0 10px 0 26px;
+		width:364px;
+	}
+	.upload_area{
+		font-size:17px;
+		color:#4c4c4c;
+		input[type=file]{
+			position: absolute;
+			width:1px;
+			height:1px;
+			padding:0;
+			margin:-1px;
+			overflow:hidden;
+			clip:rect(0,0,0,0);
+			border:0;
+		}
+		.inp_upload label{
+			display:inline-block;
+			padding:13px 0;
+			width:88px;
+			background-color:#f4f4f4;
+			border:1px solid #eaeaea;
+			font-size:15px;
+			cursor:pointer;
+			text-align:center;
+		}
+	}
+	.pw_area{
+		position:relative;
+		padding-bottom:34px;
+		font-size:17px;
+		input[type=password]{
+			margin:0 10px 0 34px;
+		}
+		.txt_warn{
+			position:absolute;
+			left:102px;
+			top:42px;
+		}
+		.btn{
+			width:90px;
+			padding:12px 0 11px;
+			margin:0;
+		}
+	}
+}
+.layer_pop.pop_login{
+	position:absolute;
+	left:auto;
+	top:auto;
+	margin-top:27px;
+	width:354px;
+	padding:30px 36px 20px;
+	margin-left:-120px;
+	border:1px solid @color_text_weak;
+	background-color:@white;
+	&:before{
+		content:'';
+		position:absolute;
+		left:50%;
+		top:-16px;
+		margin-left:-15px;
+		display:block;
+		.bg_img_loginly();
+	}
+	input[type=text],
+	input[type=email],
+	input[type=number],
+	input[type=tel],
+	input[type=password]{
+		padding:10px 0;
+	}
+	.btn{
+		width:100%;
+		margin:24px 0 14px;
+		border:0;
+		padding:14px 0 15px;
+		font-size:18px;
+	}
+	.pop_tit{
+		padding-bottom:13px;
+		text-align:center;
+	}
+	.input_area{
+		dd{
+			position:relative;
+			margin-top:10px;
+			&:before{
+				content:'';
+				display:block;
+				position:absolute;
+
+			}
+		}
+		.login_email:before{
+			left:17px;
+			top:14px;
+			.bg_ico_email();
+		}
+		.login_pw:before{
+			left:19px;
+			top:13px;
+			.bg_ico_password();
+		}
+		input{
+			display:block;
+			width:83%;
+			padding-left:58px;
+			margin:0;
+		}
+	}
+	.chk_keep{
+		padding-top:17px;
+		color:@color_text_strong;
+		font-size:15px;
+	}
+	.find_pw{
+		display:inline-block;
+		*display:inline;
+		*zoom:1;
+		font-size:13px;
+		color:@color_text_weak;
+		text-align:left;
+		&:after{
+			content:'';
+			display:block;
+			border-bottom:1px solid @color_text_weak;
+		}
+	}
+	.btn_close{
+		display:none;
+	}
+}
+.pop_upload{
+	margin-top:-190px;
+	height:380px;
+	.txt_warn{
+		display:block;
+		padding-left:105px;
+		color:#8c8c8c;
+		.ico_warning{
+			margin-right:5px;
+		}
+	}
+}
+.pop_pw_confirm{
+	margin-top:-155px;
+	height:310px;
+	.btn_pop_type1{
+		display:none;
+	}
+	.btn_pop_type2{
+		position:absolute;
+		right:14px;
+		top:0;
+	}
+}
+
+/*media queries*/
+/* Mobile */
+@media all and (max-width:1024px){
+	.layer_pop{
+		left:0;
+		width:100%;
+		margin-left:0;
+		.btn_area{
+			width:250px;
+			margin:20px auto 0;
+		}
+		.btn{
+			width:48%;
+			padding:9px 0 8px;
+			font-size:14px;
+		}
+		.pop_inner{
+			padding:20px 18px;
+			margin: 0 3.38%;
+		}
+		.pop_tit{
+			padding-bottom:12px;
+			font-size:14px;
+			line-height:17px;
+		}
+		.pop_txt{
+			padding:15px 0;
+			font-size:12px;
+			line-height:14px;
+		}
+		.btn_close{
+			right:5px;
+			top:7px;
+			padding:12px 15px;
+		}
+		input[type=text],
+		input[type=password]{
+			padding:7px 6px 6px;
+			margin:0 0 0 10px;
+			width:69%;
+		}
+		.upload_area{
+			position:relative;
+			font-size:12px;
+			.inp_upload label{
+				position:absolute;
+				left:67px;
+				top:0;
+				padding:7px 6px 6px;
+				width:69%;
+				background-color:transparent;
+				border:0;
+				font-size:0;
+			}
+		}
+		.pw_area{
+			padding-bottom:0;
+			font-size:12px;
+			input[type=password]{
+				margin:0 0 0 15px;
+			}
+			.txt_warn{
+				position:static;
+				padding-left:67px;
+			}
+			.btn{
+				width:48%;
+				padding:9px 0 8px;
+			}
+		}
+	}
+	.layer_pop.pop_login{
+		position:fixed;
+		left:50%;
+		top:66px;
+		margin-top:0;
+		width:292px;
+		padding:17px 19px;
+		margin-left:-146px;
+		border:1px solid @color_text_weak;
+		&:before{
+			content:none;
+		}
+		.pop_tit{
+			padding-bottom:13px;
+			border-bottom:1px solid #555;
+			font-size:14px;
+			line-height:15px;
+			text-align:left;
+		}
+		.input_area{
+			dd{
+				position:relative;
+				margin-top:14px;
+				&:before{
+					content:'';
+					display:block;
+					position:absolute;
+				}
+			}
+			.login_email:before{
+				left:17px;
+				top:9px;
+				.bg_ico_email_retina();
+			}
+			.login_pw:before{
+				left:19px;
+				top:6px;
+				.bg_ico_password_retina();
+			}
+			input{
+				display:block;
+				width:80%;
+				padding:7px 0 6px 50px;
+			}
+		}
+		.chk_keep{
+			padding-top:10px;
+			color:@color_secondary;
+			font-size:12px;
+		}
+		.btn{
+			margin:20px 0 14px;
+			padding:10px 0;
+			font-size:12px;
+		}
+		.find_pw{
+			font-size:12px;
+			&:after{
+				content:'';
+				display:block;
+				border-bottom:1px solid @color_text_weak;
+			}
+		}
+		.btn_close{
+			display:block;
+		}
+	}
+	.pop_upload{
+		height:100%;
+		.txt_warn{
+			padding-left:67px;
+			.ico_warning{
+				margin-right:5px;
+			}
+		}
+	}
+	.pop_pw_confirm{
+		height:100%;
+		.btn_pop_type1{
+			display:block;
+		}
+		.btn_pop_type2{
+			position:static;
+		}
+	}
+}
+
+/* Tablet and Notebook */
+@media (min-width:768px) and (max-width:1024px){
+	.layer_pop{
+		left:50%;
+		width:700px;
+		margin-left:-350px;
+	}
+}

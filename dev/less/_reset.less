@@ -1,0 +1,71 @@
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+html, body {
+	border: 0;
+	font-family:'Apple SD Gothic Neo', arial, 'Helvetica', Tahoma, Geneva, sans-serif;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	color:@color_primary;
+	background:@white;
+	font-size:100%;
+	font-weight:300;
+	line-height:100%;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%
+}
+div, span, object, iframe, img, table, caption, thead, tbody,
+tfoot, tr, tr, td, article, aside, canvas, details, figure, hgroup, menu,
+nav, footer, header, section, summary, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
+del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+ol, ul, li, fieldset, legend, label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  box-sizing:border-box;
+  caption, th, td {
+	text-align: left;
+	vertical-align: middle;
+  }
+}
+a img {
+  border: 0;
+}
+button,input,select,textarea{margin:0;font-size:100%;vertical-align:middle;}
+button{border:0;cursor:pointer;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset{border:0;}
+legend{color:#000;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:300;}
+ol,ul{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:300;line-height:1;}
+caption,hr,legend{width:0px;height:0px;font-size:1px;text-indent:-9999em;line-height:0;}
+a,a:link,a:visited,a:active,a:hover,a:focus{color:#5d6064;font-size:100%;text-decoration:none;/*outline:0;*/}
