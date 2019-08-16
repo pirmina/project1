@@ -1,6 +1,6 @@
-# JTBC_GLOBAL_Html
+# J사_GLOBAL_Html
 
-JTBC 글로벌 브로슈어
+J사 글로벌 브로슈어
 
 ## 실행방법
 
@@ -47,7 +47,7 @@ style.less 에서 순서대로 import 시키는 구조입니다.
  2. html
 
 ```
-<h1><span clas="sp_ico logo_jtbc">JTBC</span></h1> //이미지텍스트
+<h1><span clas="sp_ico logo_jtbc">J사</span></h1> //이미지텍스트
 
 <ol class="navigation">
 	<li class="home"><span class="sp_ico ico_home">Home</span></li>
